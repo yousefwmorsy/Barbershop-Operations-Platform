@@ -10,9 +10,16 @@ namespace Barbershop_Operations_Platform
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=FalseData Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        static string DB_Connection_String = @"Data Source=barbershopdb.database.windows.net;Initial Catalog=""Barbershop Operations Platform DB"";User ID=barber;Password=7ala2@password;Encrypt=true";
         SqlConnection myConnection;
-
+        public string GetConnectionString()
+        {
+            return DB_Connection_String;
+        }
+        public SqlConnection GetConnection()
+        {
+            return myConnection;
+        }
         public DBManager()
         {
             myConnection = new SqlConnection(DB_Connection_String);

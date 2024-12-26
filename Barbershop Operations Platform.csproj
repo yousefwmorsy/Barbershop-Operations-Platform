@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cust_controller.cs" />
     <Compile Include="User Interface\Barber.cs">
       <SubType>Form</SubType>
     </Compile>
