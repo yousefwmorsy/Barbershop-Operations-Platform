@@ -1,6 +1,6 @@
-﻿namespace Barbershop_Operations_Platform
+﻿namespace Barbershop_Operations_Platform.BarberUser
 {
-    partial class Barber
+    partial class BarberAttendence
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // BarberAttendence
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Barber";
+            this.Name = "BarberAttendence";
+            this.Text = "BarberAttendence";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BarberAttendence_FormClosing);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
