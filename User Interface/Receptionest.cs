@@ -25,7 +25,16 @@ namespace Barbershop_Operations_Platform
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            OfflinePayment Payment = new OfflinePayment(id, controllerObj);
+            Payment.Dock = DockStyle.Fill;
+            Payment.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(Payment);
+            Payment.Show();
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = false;
+            button4.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,6 +77,20 @@ namespace Barbershop_Operations_Platform
             button2.Enabled = true;
             button3.Enabled = true;
             button4.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            RequestDaysOff daysoff = new RequestDaysOff(id, controllerObj);
+            daysoff.Dock = DockStyle.Fill;
+            daysoff.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(daysoff);
+            daysoff.Show();
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = false;
         }
     }
 }

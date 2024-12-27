@@ -64,6 +64,12 @@
     <Compile Include="Receptionist\OfflineAppointment.Designer.cs">
       <DependentUpon>OfflineAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Receptionist\OfflinePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\OfflinePayment.Designer.cs">
+      <DependentUpon>OfflinePayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receptionist\ReceptionistInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
       <DependentUpon>ReceptionistInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Receptionist\Receptionist_Controller.cs" />
+    <Compile Include="Receptionist\RequestDaysOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\RequestDaysOff.Designer.cs">
+      <DependentUpon>RequestDaysOff.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\Barber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,8 +131,14 @@
     <EmbeddedResource Include="Receptionist\OfflineAppointment.resx">
       <DependentUpon>OfflineAppointment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\OfflinePayment.resx">
+      <DependentUpon>OfflinePayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Receptionist\ReceptionistInfo.resx">
       <DependentUpon>ReceptionistInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\RequestDaysOff.resx">
+      <DependentUpon>RequestDaysOff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Interface\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
