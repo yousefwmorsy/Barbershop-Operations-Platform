@@ -70,7 +70,7 @@ namespace Barbershop_Operations_Platform
         }
         public DataTable ViewPrevRequests(int id)
         {
-            string query = $"SELECT CONCAT(m.First_Name, ' ', m.Last_Name) as 'Manager Name', StartDate, EndDate, Status \r\nFROM Employee as m, DaysOffRequest\r\nWHERE m.Emp_id = ManagerID AND EmployeeID = {id}";
+            string query = $"SELECT CONCAT(m.First_Name, ' ', m.Last_Name) as 'Manager Name', StartDate, EndDate, Status \r\nFROM Employee as m, DaysOffRequest\r\nWHERE m.Emp_id = ManagerID AND EmployeeID = {id} AND EndDate >= '{DateTime.Now.ToString("yyyy-MM-dd")}'";
             return dbMan.ExecuteReader(query);
         }
         public void TerminateConnection()
