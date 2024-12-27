@@ -46,6 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Receptionist\AssignBarber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\AssignBarber.Designer.cs">
+      <DependentUpon>AssignBarber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\ManageAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\ManageAppointments.Designer.cs">
+      <DependentUpon>ManageAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\OfflineAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\OfflineAppointment.Designer.cs">
+      <DependentUpon>OfflineAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\ReceptionistInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\ReceptionistInfo.Designer.cs">
+      <DependentUpon>ReceptionistInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Controller.cs" />
     <Compile Include="User Interface\Barber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +110,18 @@
     <Compile Include="User Interface\Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Receptionist\AssignBarber.resx">
+      <DependentUpon>AssignBarber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\ManageAppointments.resx">
+      <DependentUpon>ManageAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\OfflineAppointment.resx">
+      <DependentUpon>OfflineAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\ReceptionistInfo.resx">
+      <DependentUpon>ReceptionistInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Interface\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User Interface\Receptionest.resx">
+      <DependentUpon>Receptionest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Interface\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="BARBER-SCISSORS-.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
