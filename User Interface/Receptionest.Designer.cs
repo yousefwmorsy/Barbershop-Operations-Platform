@@ -36,6 +36,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -56,6 +57,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.button4);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
@@ -79,9 +81,9 @@
             // 
             this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(12, 736);
+            this.button4.Location = new System.Drawing.Point(12, 640);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(288, 185);
+            this.button4.Size = new System.Drawing.Size(288, 151);
             this.button4.TabIndex = 3;
             this.button4.Text = "Request Days Off";
             this.button4.UseVisualStyleBackColor = false;
@@ -91,9 +93,9 @@
             // 
             this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(12, 523);
+            this.button3.Location = new System.Drawing.Point(12, 457);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(288, 185);
+            this.button3.Size = new System.Drawing.Size(288, 151);
             this.button3.TabIndex = 2;
             this.button3.Text = "Manage Payments";
             this.button3.UseVisualStyleBackColor = false;
@@ -103,9 +105,9 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(12, 312);
+            this.button2.Location = new System.Drawing.Point(12, 289);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(288, 185);
+            this.button2.Size = new System.Drawing.Size(288, 145);
             this.button2.TabIndex = 1;
             this.button2.Text = "Manage Appointments";
             this.button2.UseVisualStyleBackColor = false;
@@ -115,13 +117,24 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(12, 92);
+            this.button1.Location = new System.Drawing.Point(12, 111);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(288, 185);
+            this.button1.Size = new System.Drawing.Size(288, 156);
             this.button1.TabIndex = 0;
             this.button1.Text = "View Personal Info";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkGray;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button5.Location = new System.Drawing.Point(12, 835);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(288, 66);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Logout";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Receptionest
             // 
@@ -149,5 +162,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button5;
     }
 }

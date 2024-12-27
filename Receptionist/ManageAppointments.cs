@@ -19,10 +19,7 @@ namespace Barbershop_Operations_Platform.Receptionist
             InitializeComponent();
             this.id = id;
             this.controllerObj = controllerObj;
-            DataTable dt = controllerObj.ViewTodayAppointments();
-            dataGridView1.DataSource = dt;
-            DataTable dt2 = controllerObj.ViewAvailableBarbers();
-            dataGridView2.DataSource = dt2;
+         
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -47,19 +44,73 @@ namespace Barbershop_Operations_Platform.Receptionist
 
         private void ManageAppointments_Load(object sender, EventArgs e)
         {
-
+            ViewAppointments app = new ViewAppointments(id, controllerObj);
+            app.Dock = DockStyle.Fill;
+            app.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(app);
+            app.Show();
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AssignBarber assign = new AssignBarber();
+            OfflineAppointment app = new OfflineAppointment(id, controllerObj);
+            app.Dock = DockStyle.Fill;
+            app.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(app);
+            app.Show();
+            button1.Enabled = false;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            button2.Enabled = false;
+            button3.Enabled = true;
+            button4.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ViewAppointments app = new ViewAppointments(id, controllerObj);
+            app.Dock = DockStyle.Fill;
+            app.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(app);
+            app.Show();
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = false;
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = false;
+            button4.Enabled = true;
+            AssignBarber assign = new AssignBarber(id, controllerObj);
+            assign.Dock = DockStyle.Fill;
+            assign.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(assign);
             assign.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OfflineAppointment appointment = new OfflineAppointment();
-            appointment.Show();
-        }
+  
     }
 }

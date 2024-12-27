@@ -74,15 +74,15 @@ namespace Barbershop_Operations_Platform
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable ViewTodayAppointments()
+        public DataTable ViewTodayUnassignedAppointments()
         {
-            string query = $"SELECT AppointmentID, CONCAT(c.FName, ' ', c.LName) as 'Customer', CONCAT(b.First_name, ' ', Last_name) as 'Barber', service_name as 'Service', AppointmentTime\r\nFROM [dbo].[Appointment] as a, [dbo].[Customer] as c, [dbo].[Employee] as b, [dbo].[Service]\r\nWHERE a.CustomerID = c.CustID AND a.BarberID = b.Emp_id AND a.ServiceID = Service.service_id AND AppointmentTime >= '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}'";
+            string query = $"SELECT AppointmentID as ID, service_name as 'Service', CONVERT(VARCHAR(16), AppointmentTime, 120) AS Time\r\n FROM [dbo].[Appointment] as a, [dbo].[Service] WHERE  a.BarberID IS NULL AND a.ServiceID = Service.service_id AND AppointmentTime >= '{DateTime.Now.ToString("yyyy-MM-dd")} 00:00:00' AND AppointmentTime <= '{DateTime.Now.ToString("yyyy-MM-dd")} 23:59:59'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewAvailableBarbers()
         {
-            string query = $"SELECT CONCAT(e.First_name, ' ', e.Last_name) as 'Barber', b.start_time as 'Start Time', b.end_time as 'End Time'\r\nFROM [dbo].[Employee] as e, [dbo].[ManagedEmployees] as m, [dbo].[Barber] as b\r\nWHERE e.Emp_id = m.EmpId AND b.Emp_id = e.Emp_id AND m.OnDayOff = 'False'";
+            string query = $"SELECT  e.Emp_id as BarberID, CONCAT(e.First_name, ' ', e.Last_name) as 'Barber', b.start_time as 'Start Time', b.end_time as 'End Time'\r\nFROM [dbo].[Employee] as e, [dbo].[ManagedEmployees] as m, [dbo].[Barber] as b\r\nWHERE e.Emp_id = m.EmpId AND b.Emp_id = e.Emp_id AND m.OnDayOff = 'False'";
             return dbMan.ExecuteReader(query);
         }
 
@@ -91,6 +91,78 @@ namespace Barbershop_Operations_Platform
             string query = $"SELECT a.PaymentID, AppointmentID, CONCAT(c.FName, ' ',c.LName) as 'Customer', amount as 'Amount' , AppointmentTime\r\nFROM [dbo].[Payment_Transaction] as p, [dbo].[Appointment] as a, [dbo].[ReceptionistPayment] as r, [dbo].[Customer] as c\r\nWHERE p.payment_id = a.PaymentID AND r.PaymentID = p.payment_id AND p.status = 'Pending' AND c.CustID = a.CustomerID AND p.Type = 'Appointment' and p.payment_method = 'Offline'";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable ViewAllAppointments()
+        {
+            string query = $"SELECT CONCAT(c.FName, ' ', c.LName) as 'Customer', service_name as 'Service', CONVERT(VARCHAR(16), AppointmentTime, 120) AS Time, Status\r\n FROM [dbo].[Appointment] as a, [dbo].[Customer] as c, [dbo].[Service] WHERE a.CustomerID = c.CustID AND a.ServiceID = Service.service_id AND AppointmentTime >= '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DateTime GetAppTime(int appid)
+        {
+            string query = $"SELECT AppointmentTime FROM Appointment WHERE AppointmentID = {appid}";
+            return (DateTime)dbMan.ExecuteScalar(query);
+        }
+
+        public int CheckBarberFree(int empid, int appid)
+        {
+            string time = GetAppTime(appid).ToString("yyyy-MM-dd HH:mm:ss");
+            string query = $"SELECT Count(*) FROM Appointment WHERE BarberID = {empid} AND AppointmentTime = '{time}'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public TimeSpan GetBarberStart(int empid)
+        {
+            string query = $"SELECT Start_Time FROM Barber WHERE Emp_id = {empid}";
+            return (TimeSpan)dbMan.ExecuteScalar(query);
+        }
+
+        public TimeSpan GetBarberEnd(int empid)
+        {
+            string query = $"SELECT End_Time FROM Barber WHERE Emp_id = {empid}";
+            return (TimeSpan)dbMan.ExecuteScalar(query);
+        }
+
+        public int AssignBarber(int empid, int appid)
+        {
+            string query = $"UPDATE Appointment SET BarberID = {empid}, Status = 'Assigned' WHERE AppointmentID = {appid}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable GetServices()
+        {
+            string query = $"SELECT service_id, Service_Name From Service";
+            return dbMan.ExecuteReader(query);
+        }
+        public int GetServicePrice(int serviceid)
+        {
+            string query = $"SELECT Price from Service where service_id = {serviceid}";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        
+        public int AddOfflinePayment(int serviceid)
+        {
+            int price = GetServicePrice(serviceid);
+            string query = $"INSERT INTO Payment_Transaction(Type, payment_method, Status, Amount) VALUES('Appointment', 'Cash', 'Pending', {price})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int GetScopeIdentity()
+        {
+            string query = $"SELECT SCOPE_IDENTITY() As ID";
+            return Convert.ToInt32((decimal)dbMan.ExecuteScalar(query));
+        }
+
+        public int AddOfflineAppointment(string name, string apptime, int serviceid, int empid)
+        {
+            AddOfflinePayment(serviceid);
+            int paymentid = GetScopeIdentity();
+            string query = $"INSERT INTO Appointment(CustomerID, ServiceID, BarberID, PaymentID, AppointmentTime) VALUES (12, {serviceid}, NULL, {paymentid}, '{apptime}')";
+            int q1 = dbMan.ExecuteNonQuery(query);
+            string query2 = $"INSERT INTO PhoneAppointment(EmpID, AppID, CustName) VALUES ({empid}, {GetScopeIdentity()}, '{name}')";
+            return q1+dbMan.ExecuteNonQuery(query2);
+        }
+
 
         public void TerminateConnection()
         {
