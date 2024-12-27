@@ -72,7 +72,7 @@ namespace Barbershop_Operations_Platform
 
         private void requestDaysOff_button_Click(object sender, EventArgs e)
         {
-            BarberDaysOff barberDaysOff = new BarberDaysOff();
+            BarberDaysOff barberDaysOff = new BarberDaysOff(barberID);
             SwitchFormButton(barberDaysOff);
             currentClickedButton.Enabled = true;
             currentClickedButton = requestDaysOff_button;
@@ -90,7 +90,7 @@ namespace Barbershop_Operations_Platform
 
         private void attendence_button_Click(object sender, EventArgs e)
         {
-            BarberAttendence barberAttendence = new BarberAttendence();
+            BarberAttendence barberAttendence = new BarberAttendence(barberID);
             SwitchFormButton(barberAttendence);
             currentClickedButton.Enabled = true;
             currentClickedButton = attendence_button;
@@ -99,7 +99,7 @@ namespace Barbershop_Operations_Platform
 
         private void incident_button_Click(object sender, EventArgs e)
         {
-            BarberIncident barberIncident = new BarberIncident();
+            BarberIncident barberIncident = new BarberIncident(barberID);
             SwitchFormButton(barberIncident);
             currentClickedButton.Enabled = true;
             currentClickedButton = incident_button;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,11 +19,6 @@ namespace Barbershop_Operations_Platform
 
         public DataTable GetPersonalInfo(int barberid)
         {
-            //string query = $"Select e.Emp_id, e.First_Name, e.Last_name, e.Phone_number, e.Address, e.Email, b.Start_time, " +
-            //    $"b.End_Time, Concat(manager.First_Name,' ', manager.Last_name) AS Manager_Name " +
-            //    $"From Employee e, Barber b, Employee manager" +
-            //    $"Where e.Emp_id = b.Emp_id AND e.Emp_id = {barberid} AND manager.Emp_id = e.manager_id;";
-
             string query = $"Select e.Emp_id, e.First_Name, e.Last_name, e.Phone_number, e.Address, e.Email, b.Start_time, " +
                 $"b.End_Time, Concat(manager.First_Name,' ', manager.Last_name) AS Manager_Name " +
                 $"From Employee e " +
@@ -33,14 +29,14 @@ namespace Barbershop_Operations_Platform
             return dbMan.ExecuteReader(query);
         }
         
-        public int UpdateStartOrEndTime(string timeType,  string time, int barberID)
+        public int UpdatePersonalInfo(string toUpdateField, string updatedValue, int empid)
         {
-            string query = $"UPDATE Employee " +
-                $"SET {timeType} = {time} " +
-                $"WHERE Emp_id = {barberID};";
-
+            string query = $"Update Employee " +
+                $"Set {toUpdateField} = '{updatedValue}' " +
+                $"Where Emp_id = {empid};";
             return dbMan.ExecuteNonQuery(query);
         }
+
         public DataTable GetBarberSchedule(int barberid)
         {
             string query = $"Select a.AppointmentID, a.CustomerID, a.CustComment, a.AppointmentTime " +
@@ -57,15 +53,6 @@ namespace Barbershop_Operations_Platform
             return (int)dbMan.ExecuteScalar(query);
         }
 
-        public int InsertDayOffRequest(int empid, string sdate, string edate)
-        {
-            int managerid = GetManagerID(empid);
-            string status = "Pending";
-            //string query = 
-            //return dbMan.ExecuteNonQuery(query);
-            return 0;
-        }
-
         public DataTable GetAvailableSupplies()
         {
             string query = $"SELECT supplyID, supply_Name, Quantity\r\nFROM Inventory\r\nORDER BY Quantity;";
@@ -74,9 +61,10 @@ namespace Barbershop_Operations_Platform
 
         public DataTable GetSupplyRequests(int barberid)
         {
-            string query = $"SELECT supply_Name, sr.date, sr.quantity, CONCAT(e.First_name, ' ', e.Last_name) AS Manager_Name, sr.manager_id, sr.status " +
+            string query = $"SELECT supply_Name,  sr.status, sr.date, sr.quantity, CONCAT(e.First_name, ' ', e.Last_name) AS Manager_Name " +
                 $"FROM Supply_Request sr, Inventory, Employee e " +
-                $"WHERE supplyID = supply_id AND sr.manager_id = e.Emp_id AND barber_id = {barberid};";
+                $"WHERE supplyID = supply_id AND sr.manager_id = e.Emp_id AND barber_id = {barberid} " +
+                $"ORDER BY sr.date DESC;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -106,6 +94,61 @@ namespace Barbershop_Operations_Platform
                 $"WHERE barber_id = {barberid} AND supply_id = {supply_id} AND date = '{date}' AND status = 'Pending';";
             return (int)dbMan.ExecuteScalar(checkQuery);
         }
+
+        public int CheckDaysOffEligiblitiy(string startDate, string endDate, int empID)
+        {
+            string query = $"Select Count(*) " +
+                $"From DaysOffRequest d " +
+                $"Where EmployeeID = {empID} AND " +
+                $"((StartDate <= '{startDate}' AND EndDate >= '{startDate}') OR (StartDate <= '{endDate}' AND EndDate >= '{endDate}'));";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public DataTable GetDaysOffClashes(string startDate, string endDate, int empID)
+        {
+            string query = $"Select StartDate, EndDate, Status " +
+                $"From DaysOffRequest d " +
+                $"Where EmployeeID = {empID} AND " +
+                $"((StartDate <= '{startDate}' AND EndDate >= '{startDate}') OR (StartDate <= '{endDate}' AND EndDate >= '{endDate}'));";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetDaysOffRequests(int barberid)
+        {
+            string date = DateTime.Today.ToString("yyyy-MM-dd");
+            string query = $"Select StartDate, EndDate, Status " +
+            $"From DaysOffRequest d " +
+            $"Where EmployeeID = {barberid} AND EndDate >= '{date} " +
+            $"ORDER BY EndDate ASC';";
+            return dbMan.ExecuteReader(query);
+        }
+        public int InsertDaysOffRequest(int empid, string startDate, string endDate)
+        {
+            string status = "Pending";
+            int managerid = GetManagerID(empid);
+            string query = $"Insert Into DaysOffRequest(EmployeeID, ManagerID, StartDate, EndDate, Status) " +
+                    $"Values ({empid}, {managerid}, '{startDate}', '{endDate}', '{status}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetAttendanceLog(int empId)
+        {
+            string query = $"SELECT date " +
+                $"From Attendance_Log " +
+                $"Where emp_id = {empId} " +
+                $"ORDER BY date DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertAttendance(int barberid)
+        {
+            string today = DateTime.Today.ToString("yyyy-MM-dd");
+            string query = $"Insert Into Attendance_Log(emp_id, date) " +
+                $"Values ({barberid}, '{today}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        //public DataTable GetAppointmentsWithoutIncidents(int barberid)
+        //{
+
+        //}
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

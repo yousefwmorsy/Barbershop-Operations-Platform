@@ -13,10 +13,13 @@ namespace Barbershop_Operations_Platform.BarberUser
     public partial class BarberIncident : Form
     {
         BarberController controllerobject;
-        public BarberIncident()
+        int barberID;
+        public BarberIncident(int barberid)
         {
             InitializeComponent();
             controllerobject = new BarberController();
+            barberID = barberid;
+
         }
 
         private void BarberIncident_FormClosing(object sender, FormClosingEventArgs e)

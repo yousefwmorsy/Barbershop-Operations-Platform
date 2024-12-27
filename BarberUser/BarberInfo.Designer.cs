@@ -50,7 +50,6 @@
             this.update_text = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.hours_combo = new System.Windows.Forms.ComboBox();
             this.update_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -66,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 57);
+            this.label2.Location = new System.Drawing.Point(31, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 1;
@@ -84,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 83);
+            this.label4.Location = new System.Drawing.Point(31, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 2;
@@ -174,7 +173,7 @@
             // lname_label
             // 
             this.lname_label.AutoSize = true;
-            this.lname_label.Location = new System.Drawing.Point(118, 83);
+            this.lname_label.Location = new System.Drawing.Point(118, 84);
             this.lname_label.Name = "lname_label";
             this.lname_label.Size = new System.Drawing.Size(58, 13);
             this.lname_label.TabIndex = 10;
@@ -183,7 +182,7 @@
             // fname_label
             // 
             this.fname_label.AutoSize = true;
-            this.fname_label.Location = new System.Drawing.Point(118, 57);
+            this.fname_label.Location = new System.Drawing.Point(118, 58);
             this.fname_label.Name = "fname_label";
             this.fname_label.Size = new System.Drawing.Size(57, 13);
             this.fname_label.TabIndex = 9;
@@ -201,7 +200,7 @@
             // managerName_label
             // 
             this.managerName_label.AutoSize = true;
-            this.managerName_label.Location = new System.Drawing.Point(118, 195);
+            this.managerName_label.Location = new System.Drawing.Point(118, 191);
             this.managerName_label.Name = "managerName_label";
             this.managerName_label.Size = new System.Drawing.Size(49, 13);
             this.managerName_label.TabIndex = 17;
@@ -210,7 +209,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 195);
+            this.label10.Location = new System.Drawing.Point(31, 191);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 16;
@@ -223,15 +222,13 @@
             this.updateInfo_combo.Name = "updateInfo_combo";
             this.updateInfo_combo.Size = new System.Drawing.Size(135, 21);
             this.updateInfo_combo.TabIndex = 18;
-            this.updateInfo_combo.SelectedIndexChanged += new System.EventHandler(this.updateInfo_combo_SelectedIndexChanged);
             // 
             // update_text
             // 
             this.update_text.Location = new System.Drawing.Point(423, 83);
             this.update_text.Name = "update_text";
-            this.update_text.Size = new System.Drawing.Size(135, 20);
+            this.update_text.Size = new System.Drawing.Size(160, 20);
             this.update_text.TabIndex = 19;
-            this.update_text.Visible = false;
             // 
             // label9
             // 
@@ -251,17 +248,9 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Value";
             // 
-            // hours_combo
-            // 
-            this.hours_combo.FormattingEnabled = true;
-            this.hours_combo.Location = new System.Drawing.Point(564, 83);
-            this.hours_combo.Name = "hours_combo";
-            this.hours_combo.Size = new System.Drawing.Size(145, 21);
-            this.hours_combo.TabIndex = 23;
-            // 
             // update_button
             // 
-            this.update_button.Location = new System.Drawing.Point(493, 129);
+            this.update_button.Location = new System.Drawing.Point(424, 129);
             this.update_button.Name = "update_button";
             this.update_button.Size = new System.Drawing.Size(134, 49);
             this.update_button.TabIndex = 25;
@@ -275,7 +264,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.update_button);
-            this.Controls.Add(this.hours_combo);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.update_text);
@@ -331,7 +319,6 @@
         private System.Windows.Forms.TextBox update_text;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox hours_combo;
         private System.Windows.Forms.Button update_button;
     }
 }

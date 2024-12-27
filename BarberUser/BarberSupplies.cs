@@ -23,7 +23,9 @@ namespace Barbershop_Operations_Platform.BarberUser
             DataTable dt = controllerObject.GetAvailableSupplies();
             if (dt != null)
             {
-                availableSupplies_datagrid.DataSource = dt;
+                DataTable filteredDt = dt.DefaultView.ToTable(false, "supply_Name", "Quantity");
+
+                availableSupplies_datagrid.DataSource = filteredDt;
                 supply_combo.DataSource = dt;
                 supply_combo.DisplayMember = "supply_Name";
                 supply_combo.ValueMember = "supplyID";

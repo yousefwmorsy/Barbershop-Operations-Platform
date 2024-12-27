@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,11 +22,7 @@ namespace Barbershop_Operations_Platform.BarberUser
             barberID = barberid;
             UpdateInfo();
 
-            updateInfo_combo.DataSource = new string[] {"First Name", "Last Name", "Phone number", "Address", "Email", "Start_Time", "End_Time"};
-            for (int i = 0; i < 24; i++)
-            {
-                hours_combo.Items.Add(i.ToString("D2") + ":00");
-            }
+            updateInfo_combo.DataSource = new string[] {"First Name", "Last Name", "Phone Number", "Address", "Email"};
         }
         
         public void UpdateInfo()
@@ -63,27 +60,6 @@ namespace Barbershop_Operations_Platform.BarberUser
             controllerObject.TerminateConnection();
         }
 
-        private void updateInfo_combo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (updateInfo_combo.SelectedItem)
-            {
-                case "Start_Time":
-                    update_text.Visible = false;
-                    hours_combo.Visible = true;
-                    break;
-                case "End_Time":
-                    update_text.Visible = false;
-                    hours_combo.Visible = true;
-                    break;
-
-                default:
-                    hours_combo.Visible = false;
-                    update_text.Visible = true;
-                    update_text.Text = string.Empty;
-                    break;
-            }
-        }
-
         private void update_button_Click(object sender, EventArgs e)
         {
             if (updateInfo_combo.SelectedItem == null)
@@ -91,12 +67,68 @@ namespace Barbershop_Operations_Platform.BarberUser
                 MessageBox.Show("Select a field to modify");
                 return;
             }
-            if (updateInfo_combo.SelectedItem.ToString() == "Start_Time" || updateInfo_combo.SelectedItem.ToString() == "End_Time")
+            string selected = "";
+            string text = update_text.Text.ToString();
+            switch (updateInfo_combo.SelectedItem)
             {
-                controllerObject.UpdateStartOrEndTime(updateInfo_combo.SelectedItem.ToString(), hours_combo.Text.ToString(), barberID);
-            }    
+                case "First Name":
+                    selected = "First_name";
+                    if (text.All(char.IsLetter) == false || text.Length == 0)
+                    {
+                        MessageBox.Show("Enter Valid Name");
+                        return;
+                    }
+                    break;
+                case "Last Name":
+                    selected = "Last_name";
+                    if (text.All(char.IsLetter) == false || text.Length == 0)
+                    {
+                        MessageBox.Show("Enter Valid Name");
+                        return;
+                    }
+                    break;
 
-            UpdateInfo();
+                case "Phone Number":
+                    selected = "Phone_number";
+                    if (Regex.IsMatch(text, @"^01[0-9]{10}$") == false)
+                    {
+                        MessageBox.Show("Enter Valid Phone number (12 digits)");
+                        return;
+                    }
+                    break;
+
+                case "Email":
+                    selected = "Email";
+                    if (!Regex.IsMatch(text, @"^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                    {
+                        MessageBox.Show("Enter Valid Email");
+                        return;
+                    }
+                    break;
+                case "Address":
+                    selected = "Address";
+                    string pattern = @"[^a-zA-Z0-9\s,.@_-]";
+                    if (Regex.IsMatch(text, pattern))
+                    {
+                        MessageBox.Show("Donot Enter Special Characters");
+                        return;
+                    }
+                    break;
+
+                default:
+                    return;
+            }
+
+            int x = controllerObject.UpdatePersonalInfo(selected, text, barberID);
+            if (x > 0)
+            {
+                UpdateInfo();
+                MessageBox.Show("Updated Sucessfuly");
+            }
+            else
+            {
+                MessageBox.Show("Couldn't Update");
+            }
         }
     }
 }

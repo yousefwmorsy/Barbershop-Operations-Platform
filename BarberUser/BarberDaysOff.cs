@@ -13,10 +13,14 @@ namespace Barbershop_Operations_Platform.BarberUser
     public partial class BarberDaysOff : Form
     {
         BarberController controllerObject;
-        public BarberDaysOff()
+        int barberID;
+        public BarberDaysOff(int barberid)
         {
             InitializeComponent();
             controllerObject = new BarberController();
+            barberID = barberid;
+
+            dataGridView2.DataSource = controllerObject.GetDaysOffRequests(barberID);
         }
 
         private void BarberDaysOff_FormClosing(object sender, FormClosingEventArgs e)
@@ -24,15 +28,32 @@ namespace Barbershop_Operations_Platform.BarberUser
             controllerObject.TerminateConnection();
         }
 
-        private void availability_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void reqDaysOff_button_Click(object sender, EventArgs e)
         {
-            string startTime = startDate_datePicker.Value.ToString("yyyy-MM-dd");
-            string endTime = endDate_datePicker.Value.ToString("yyyy-MM-dd");
+            DateTime start = startDate_datePicker.Value.Date;
+            DateTime end = endDate_datePicker.Value.Date;
+            DateTime today = DateTime.Today;
+            if (start <= today || end <= today)
+            {
+                MessageBox.Show("Enter Valid Dates");
+                return;
+            }
+            string startString = start.ToString("yyyy-MM-dd");
+            string endString = end.ToString("yyyy-MM-dd");
+
+            if (controllerObject.CheckDaysOffEligiblitiy(startString, endString, barberID) > 0)
+            {
+                dataGridView1.DataSource = controllerObject.GetDaysOffClashes(startString, endString, barberID);
+                MessageBox.Show("Days requested overlap another request");
+
+                return;
+            }
+            int x = controllerObject.InsertDaysOffRequest(barberID, startString, endString);
+            dataGridView2.DataSource = controllerObject.GetDaysOffRequests(barberID);
+            if (x > 0)
+            {
+                MessageBox.Show("Inserted Successfuly");
+            }
         }
     }
 }
