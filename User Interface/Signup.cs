@@ -28,41 +28,41 @@ namespace Barbershop_Operations_Platform
 
         private void SignupButton_Click(object sender, EventArgs e)
         {
-            //int trashcan = 0;
-            //if (!EmailBox.Text.Contains('@')|| string.IsNullOrWhiteSpace(EmailBox.Text))
-            //{
-            //    MessageBox.Show("enter a valid email name");
-            //}
-            //else if (NPassBox.Text != REENPassBox.Text||string.IsNullOrWhiteSpace(NPassBox.Text))
-            //{
-            //    MessageBox.Show("Passwords do not match");
-            //}
-            //else if (Int32.TryParse(FNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(FNBox.Text))
-            //{
-            //    MessageBox.Show("enter a valid first name");
-            //}
-            //else if (Int32.TryParse(LNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(LNBox.Text))
-            //{
-            //    MessageBox.Show("enter a valid last name");
-            //}
-            //else if (!Int32.TryParse(PHBox.Text, out trashcan) || PHBox.Text.Length != 11)
-            //{
-            //    MessageBox.Show("enter a valid phone name");
-            //}
-            //else
-            //{
-            //    if (controller.add_customer(FNBox.Text, LNBox.Text, dateTimePicker1.Value.ToString("yyyy/MM/dd"), PHBox.Text, EmailBox.Text, NPassBox.Text) != 0)
-            //    {
-            //        MessageBox.Show("Account created successfully");
-            //        this.Hide();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("failed");
-            //    }
-            //}
-            Customer customer = new Customer(5);
-            customer.ShowDialog();
+            int trashcan = 0;
+            if (!EmailBox.Text.Contains('@') || string.IsNullOrWhiteSpace(EmailBox.Text))
+            {
+                MessageBox.Show("enter a valid email name");
+            }
+            else if (NPassBox.Text != REENPassBox.Text || string.IsNullOrWhiteSpace(NPassBox.Text))
+            {
+                MessageBox.Show("Passwords do not match");
+            }
+            else if (Int32.TryParse(FNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(FNBox.Text))
+            {
+                MessageBox.Show("enter a valid first name");
+            }
+            else if (Int32.TryParse(LNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(LNBox.Text))
+            {
+                MessageBox.Show("enter a valid last name");
+            }
+            else if (!Int32.TryParse(PHBox.Text, out trashcan) || PHBox.Text.Length != 11)
+            {
+                MessageBox.Show("enter a valid phone name");
+            }
+            else
+            {
+                if (controller.add_customer(FNBox.Text, LNBox.Text, dateTimePicker1.Value.ToString("yyyy/MM/dd"), PHBox.Text, EmailBox.Text, NPassBox.Text) != 0)
+                {
+                    MessageBox.Show("Account created successfully");
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("failed");
+                }
+            }
+            //Customer customer = new Customer(5);
+            //customer.ShowDialog();
 
         }
 
