@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barbershop_Operations_Platform.User_Interface;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Barbershop_Operations_Platform
         public Signup()
         {
             InitializeComponent();
+            
         }
 
         private void Signup_Load(object sender, EventArgs e)
@@ -26,39 +28,42 @@ namespace Barbershop_Operations_Platform
 
         private void SignupButton_Click(object sender, EventArgs e)
         {
-            int trashcan = 0;
-            if (!EmailBox.Text.Contains('@')|| string.IsNullOrWhiteSpace(EmailBox.Text))
-            {
-                MessageBox.Show("enter a valid email name");
-            }
-            else if (NPassBox.Text != REENPassBox.Text||string.IsNullOrWhiteSpace(NPassBox.Text))
-            {
-                MessageBox.Show("Passwords do not match");
-            }
-            else if (Int32.TryParse(FNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(FNBox.Text))
-            {
-                MessageBox.Show("enter a valid first name");
-            }
-            else if (Int32.TryParse(LNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(LNBox.Text))
-            {
-                MessageBox.Show("enter a valid last name");
-            }
-            else if (!Int32.TryParse(PHBox.Text, out trashcan) || PHBox.Text.Length != 11)
-            {
-                MessageBox.Show("enter a valid phone name");
-            }
-            else
-            {
-                if (controller.add_customer(FNBox.Text, LNBox.Text, dateTimePicker1.Value.ToString("yyyy/MM/dd"), PHBox.Text, EmailBox.Text, NPassBox.Text) != 0)
-                {
-                    MessageBox.Show("Account created successfully");
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("failed");
-                }
-            }
+            //int trashcan = 0;
+            //if (!EmailBox.Text.Contains('@')|| string.IsNullOrWhiteSpace(EmailBox.Text))
+            //{
+            //    MessageBox.Show("enter a valid email name");
+            //}
+            //else if (NPassBox.Text != REENPassBox.Text||string.IsNullOrWhiteSpace(NPassBox.Text))
+            //{
+            //    MessageBox.Show("Passwords do not match");
+            //}
+            //else if (Int32.TryParse(FNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(FNBox.Text))
+            //{
+            //    MessageBox.Show("enter a valid first name");
+            //}
+            //else if (Int32.TryParse(LNBox.Text, out trashcan) || string.IsNullOrWhiteSpace(LNBox.Text))
+            //{
+            //    MessageBox.Show("enter a valid last name");
+            //}
+            //else if (!Int32.TryParse(PHBox.Text, out trashcan) || PHBox.Text.Length != 11)
+            //{
+            //    MessageBox.Show("enter a valid phone name");
+            //}
+            //else
+            //{
+            //    if (controller.add_customer(FNBox.Text, LNBox.Text, dateTimePicker1.Value.ToString("yyyy/MM/dd"), PHBox.Text, EmailBox.Text, NPassBox.Text) != 0)
+            //    {
+            //        MessageBox.Show("Account created successfully");
+            //        this.Hide();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("failed");
+            //    }
+            //}
+            Customer customer = new Customer(5);
+            customer.ShowDialog();
+
         }
 
         private void Firstnamelabel_Click(object sender, EventArgs e)
