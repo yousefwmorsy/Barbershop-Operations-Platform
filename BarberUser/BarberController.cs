@@ -136,7 +136,6 @@ namespace Barbershop_Operations_Platform
                 $"ORDER BY date DESC;";
             return dbMan.ExecuteReader(query);
         }
-
         public int InsertAttendance(int barberid)
         {
             string today = DateTime.Today.ToString("yyyy-MM-dd");
@@ -145,10 +144,15 @@ namespace Barbershop_Operations_Platform
             return dbMan.ExecuteNonQuery(query);
         }
 
-        //public DataTable GetAppointmentsWithoutIncidents(int barberid)
-        //{
-
-        //}
+        public DataTable GetAppointmentsWithoutIncidents(int barberid)
+        {
+            string query = $"SELECT a.AppointmentID AS 'Appointment Number', CONCAT(c.FName, ' ', c.LName) AS 'Customer Name', s.service_name AS 'Service Name', a.AppointmentTime AS 'Time', a.IncidentReport As 'Incident Report' " +
+                $"FROM Appointment a " +
+                $"JOIN Customer c ON a.CustomerID = c.CustID " +
+                $"JOIN Service s ON s.service_id = a.AppointmentID " +
+                $"WHERE BarberID = {barberid} AND a.Status = 'Done';";
+            return dbMan.ExecuteReader(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
