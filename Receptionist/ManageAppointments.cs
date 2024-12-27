@@ -19,6 +19,10 @@ namespace Barbershop_Operations_Platform.Receptionist
             InitializeComponent();
             this.id = id;
             this.controllerObj = controllerObj;
+            DataTable dt = controllerObj.ViewTodayAppointments();
+            dataGridView1.DataSource = dt;
+            DataTable dt2 = controllerObj.ViewAvailableBarbers();
+            dataGridView2.DataSource = dt2;
         }
 
         private void label1_Click(object sender, EventArgs e)
