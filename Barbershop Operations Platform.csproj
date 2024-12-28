@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Receptionist\AssignBarber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,7 @@
     <Compile Include="Receptionist\ViewAppointments.Designer.cs">
       <DependentUpon>ViewAppointments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cust_controller.cs" />
     <Compile Include="User Interface\Barber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +110,18 @@
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="DbManager.cs" />
+    <Compile Include="User Interface\cust_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\cust_info.Designer.cs">
+      <DependentUpon>cust_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\history.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\history.Designer.cs">
+      <DependentUpon>history.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,12 +142,19 @@
     <Compile Include="User Interface\Receptionest.Designer.cs">
       <DependentUpon>Receptionest.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Interface\reserve_appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\reserve_appointment.Designer.cs">
+      <DependentUpon>reserve_appointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\Signup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="User Interface\Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+
     <EmbeddedResource Include="Receptionist\AssignBarber.resx">
       <DependentUpon>AssignBarber.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +178,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receptionist\ViewAppointments.resx">
       <DependentUpon>ViewAppointments.cs</DependentUpon>
+    <Compile Include="User Interface\Update_cust_data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\Update_cust_data.Designer.cs">
+      <DependentUpon>Update_cust_data.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="User Interface\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\cust_info.resx">
+      <DependentUpon>cust_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\history.resx">
+      <DependentUpon>history.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="User Interface\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
@@ -172,9 +208,14 @@
     </Compile>
     <EmbeddedResource Include="User Interface\Receptionest.resx">
       <DependentUpon>Receptionest.cs</DependentUpon>
+    <EmbeddedResource Include="User Interface\reserve_appointment.resx">
+      <DependentUpon>reserve_appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Interface\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Update_cust_data.resx">
+      <DependentUpon>Update_cust_data.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
