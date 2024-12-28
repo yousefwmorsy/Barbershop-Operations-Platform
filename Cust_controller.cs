@@ -56,8 +56,8 @@ namespace Barbershop_Operations_Platform
 
             //}
 
-            string query = "INSERT INTO customer (Fname, Lname, BDate, phone_number, Email, Password) " +
-                          "VALUES ('" + firstname + "', '" + lastname + "', '" + BDate + "', '" + phone + "', '" + email + "', '" + password + "');";
+            string query = "INSERT INTO customer (Fname, Lname, BDate, phone_number, Email, Password,points) " +
+                          "VALUES ('" + firstname + "', '" + lastname + "', '" + BDate + "', '" + phone + "', '" + email + "', '" + password + "','" + 0+"');";
             return dbMan.ExecuteNonQuery(query);
         }
         public int getpoints(int id)
@@ -122,9 +122,17 @@ namespace Barbershop_Operations_Platform
         }
         public int addpayment(string method, int amount)
         {
-            string query = "INSERT INTO Payment_Transaction (type,payment_method,status,amount) VALUES " +
-              " ('" + "Appointment" + "','" + method + "','" + "Pending" + "','" + amount + "');  SELECT SCOPE_IDENTITY();";
-            return Int32.Parse(dbMan.ExecuteScalar(query).ToString());
+            if (method == "Points")
+            {
+                string query = "INSERT INTO Payment_Transaction (type,payment_method,status,amount) VALUES " +
+                  " ('" + "Appointment" + "','" + method + "','" + "Paid" + "','" + amount + "');  SELECT SCOPE_IDENTITY();";
+                return Int32.Parse(dbMan.ExecuteScalar(query).ToString());
+            }
+            else {
+                string query = "INSERT INTO Payment_Transaction (type,payment_method,status,amount) VALUES " +
+                      " ('" + "Appointment" + "','" + method + "','" + "Pending" + "','" + amount + "');  SELECT SCOPE_IDENTITY();";
+                return Int32.Parse(dbMan.ExecuteScalar(query).ToString());
+            }
         }
 
         public void updatepoints(int id, int v)

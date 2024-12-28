@@ -134,8 +134,7 @@
             this.Controls.Add(this.Usernamebox);
             this.Controls.Add(this.PasswoedBox);
             this.Name = "Login_Form";
-            this.Text = "Login Form";
-            this.Load += new System.EventHandler(this.Login_Form_Load);
+           this.Text = "Login Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
