@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Cust_controller.cs" />
     <Compile Include="DbManager.cs" />
     <Compile Include="Form1.cs">
@@ -108,8 +109,45 @@
     <Compile Include="User Interface\Barber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User Interface\Barber.Designer.cs">
+    <Compile Include="BarberUser\BarberAttendence.Designer.cs">
+      <DependentUpon>BarberAttendence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberController.cs" />
+    <Compile Include="BarberUser\Barber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\Barber.Designer.cs">
       <DependentUpon>Barber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberDaysOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberDaysOff.Designer.cs">
+      <DependentUpon>BarberDaysOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberIncident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberIncident.Designer.cs">
+      <DependentUpon>BarberIncident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberInfo.Designer.cs">
+      <DependentUpon>BarberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberSchedule.Designer.cs">
+      <DependentUpon>BarberSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberSupplies.Designer.cs">
+      <DependentUpon>BarberSupplies.cs</DependentUpon>
     </Compile>
     <Compile Include="User Interface\Customer.cs">
       <SubType>Form</SubType>

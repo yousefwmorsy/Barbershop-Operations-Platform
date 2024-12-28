@@ -28,7 +28,7 @@ namespace Barbershop_Operations_Platform
             {
                 myConnection.Open();
                 Console.WriteLine("The DB connection is opened successfully");
-                MessageBox.Show("The DB connection is opened successfully");
+                //MessageBox.Show("The DB connection is opened successfully");
             }
             catch (Exception e)
             {
