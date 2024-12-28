@@ -200,6 +200,9 @@
     <EmbeddedResource Include="User Interface\ManagersTools\ViewServFeedbackAndReports.resx">
       <DependentUpon>ViewServFeedbackAndReports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ManagersTools\ViewFinancialsStatistics.resx">
+      <DependentUpon>ViewFinancialsStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Interface\ManageSupliesRequest\ManageSuppliesRequest.resx">
       <DependentUpon>ManageSuppliesRequest.cs</DependentUpon>
     </EmbeddedResource>

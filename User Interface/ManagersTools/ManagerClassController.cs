@@ -49,6 +49,57 @@ namespace Barbershop_Operations_Platform.User_Interface.ManagersTools
             return dbMan.ExecuteReader(Query);
 
         }
+        
+        public int GetNumberOfAcceptedDaysOff()
+        {
+            string query = "SELECT SUM(DATEDIFF(day, StartDate, EndDate)) AS 'Total Days Awarded'\r\nFROM DaysOffRequest;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public double GetAvgSupplyRequestPrice()
+        {
+            string query = "Select AVG(CAST(sr.quantity AS FLOAT)*i.price)\r\nFROM Supply_Request sr\r\nJOIN Inventory i ON i.supplyID = sr.supply_id";
+            return (double)dbMan.ExecuteScalar(query);
+        }
+        public DataTable GetMostAppointmentsCustomer()
+        {
+            string query = "SELECT c.CustID,CONCAT(FName, ' ', LName) AS Name, COUNT(a.AppointmentID) AS 'appointment count' " +
+                "FROM Customer c " +
+                "JOIN Appointment a ON a.CustomerID = c.CustID " +
+                "GROUP BY c.CustID, c.Fname, c.Lname " +
+                "ORDER BY 'appointment count' DESC";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable GetCustomersTotalProfit()
+        {
+            string query = "SELECT CustomerID, CONCAT(c.FName, ' ', c.LName) AS 'Customer Name', SUM(pt.amount) AS 'Total Profit' " +
+                "FROM Payment_Transaction pt " +
+                "JOIN Appointment a ON Pt.payment_id = a.PaymentID " +
+                "JOIN Customer c ON a.CustomerID = c.CustID " +
+                "GROUP BY CustomerID, c.FName, c.LName " +
+                "ORDER BY 'Total Profit' DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetSupplyTotalCost()
+        {
+            string query = "Select i.supplyID, i.supply_Name AS 'Supply Name', Sum(i.Price*sb.QuanityBought) AS 'Total Supply Cost' " +
+                "FROM Inventory i " +
+                "JOIN SuppliesBought sb ON i.supplyID = sb.SupplyID " +
+                "GROUP BY i.supplyID, i.supply_Name " +
+                "ORDER BY 'Total Supply Cost' DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int GetTotalProfit()
+        {
+            string profitQuery = "Select Sum(amount)\r\nFrom Payment_Transaction pt\r\nWhere type = 'Appointment';";
+            int profit = (int)dbMan.ExecuteScalar(profitQuery);
+
+            string costQuery = "Select Sum(amount)\r\nFrom Payment_Transaction pt\r\nWhere type = 'Supply';";
+            int cost = (int)dbMan.ExecuteScalar(costQuery);
+
+            return (profit - cost);
+        }
 
 
 

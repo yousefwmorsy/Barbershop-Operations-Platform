@@ -77,6 +77,15 @@ namespace Barbershop_Operations_Platform
             panel1.Controls.Add(F);
             F.Show();
         }
+        private void ViewFSButton_Click(object sender, EventArgs e)
+        {
+            Form F = new ViewFinancialsStatistics();
+            F.Dock = DockStyle.Fill;
+            F.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(F);
+            F.Show();
+        }
 
         private void CreatOffers_Click(object sender, EventArgs e)
         {
