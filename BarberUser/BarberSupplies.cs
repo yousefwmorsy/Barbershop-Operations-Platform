@@ -117,7 +117,8 @@ namespace Barbershop_Operations_Platform.BarberUser
                 }
             }
 
-
+            supplyRequests_datagrid.Visible = true;
+            supplyRequests_label.Visible = false;
             supplyRequests_datagrid.DataSource = controllerObject.GetSupplyRequests(barberId);
         }
     }

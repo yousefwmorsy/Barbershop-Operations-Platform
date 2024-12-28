@@ -39,9 +39,11 @@ namespace Barbershop_Operations_Platform
 
         public DataTable GetBarberSchedule(int barberid)
         {
-            string query = $"Select a.AppointmentID, a.CustomerID, a.CustComment, a.AppointmentTime " +
+            string query = $"Select a.AppointmentID, a.CustomerID, CONCAT(c.FName, ' ', c.LName) AS Name, a.CustComment, a.AppointmentTime, status " +
                 $"From Appointment a " +
-                $"Where a.Status != 'Finished' AND a.BarberID = {barberid}";
+                $"JOIN Customer c ON a.CustomerID = c.CustID " +
+                $"Where a.Status != 'Finished' AND a.BarberID = {barberid} " +
+                $"ORDER BY DAY(AppointmentTime) DESC, DATEPART(HOUR, AppointmentTime) ASC;";
             return dbMan.ExecuteReader(query);
         }
 

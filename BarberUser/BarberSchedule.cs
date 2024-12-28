@@ -26,7 +26,7 @@ namespace Barbershop_Operations_Platform.BarberUser
             DataTable dt = controllerObject.GetBarberSchedule(barberId);
             if (dt != null)
             {
-                dataGridView1.DataSource = dt;
+                dataGridView1.DataSource = dt.DefaultView.ToTable(false, "Name", "CustComment", "AppointmentTime", "status");
             }
             else
             {
