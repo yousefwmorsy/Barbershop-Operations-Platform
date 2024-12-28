@@ -36,9 +36,9 @@
             // 
             // info_button
             // 
-            this.info_button.Location = new System.Drawing.Point(30, 36);
+            this.info_button.Location = new System.Drawing.Point(302, 48);
             this.info_button.Name = "info_button";
-            this.info_button.Size = new System.Drawing.Size(156, 46);
+            this.info_button.Size = new System.Drawing.Size(189, 46);
             this.info_button.TabIndex = 0;
             this.info_button.Text = "view information";
             this.info_button.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(33, 132);
+            this.update.Location = new System.Drawing.Point(302, 132);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(139, 45);
+            this.update.Size = new System.Drawing.Size(189, 45);
             this.update.TabIndex = 1;
             this.update.Text = "Update Details";
             this.update.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             // reserve
             // 
-            this.reserve.Location = new System.Drawing.Point(33, 241);
+            this.reserve.Location = new System.Drawing.Point(302, 234);
             this.reserve.Name = "reserve";
             this.reserve.Size = new System.Drawing.Size(189, 43);
             this.reserve.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // history
             // 
-            this.history.Location = new System.Drawing.Point(33, 339);
+            this.history.Location = new System.Drawing.Point(302, 330);
             this.history.Name = "history";
             this.history.Size = new System.Drawing.Size(189, 43);
             this.history.TabIndex = 3;

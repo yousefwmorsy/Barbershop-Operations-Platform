@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,37 +44,79 @@ namespace Barbershop_Operations_Platform.User_Interface
 
         private void update_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(first_name.Text))
+
+            //if (!EmailBox.Text.Contains('@') && string.IsNullOrWhiteSpace(EmailBox.Text) && !Regex.IsMatch(EmailBox.Text, pattern))
+            //{
+            //    MessageBox.Show("enter a valid email name");
+            //}
+            //else if (NPassBox.Text != REENPassBox.Text && string.IsNullOrWhiteSpace(NPassBox.Text))
+            //{
+            //    MessageBox.Show("Passwords do not match");
+            //}
+            //else if (Int32.TryParse(FNBox.Text, out trashcan) && string.IsNullOrWhiteSpace(FNBox.Text) && Regex.IsMatch(FNBox.Text, pattern))
+            //{
+            //    MessageBox.Show("enter a valid first name");
+            //}
+            //else if (Int32.TryParse(LNBox.Text, out trashcan) && string.IsNullOrWhiteSpace(LNBox.Text) && Regex.IsMatch(LNBox.Text, pattern))
+            //{
+            //    MessageBox.Show("enter a valid last name");
+            //}
+            //else if (!Int32.TryParse(PHBox.Text, out trashcan) && PHBox.Text.Length != 11)
+            //{
+            //    MessageBox.Show("enter a valid phone name");
+            //}
+            string patternemail = @"[^a-zA-Z0-9\s,.-@]";
+            string pattern = @"[^a-zA-Z\s]";
+            int trashcan = 0;
+            if (!(string.IsNullOrWhiteSpace(first_name.Text)&& !Int32.TryParse(first_name.Text, out trashcan) ))
             {
-                controller.update_cust_info(ID, "Fname", first_name.Text);
+                if ( !Regex.IsMatch(first_name.Text, pattern)&&controller.update_cust_info(ID, "Fname", first_name.Text) == 1)
+                {
+                    MessageBox.Show("first name updated");
+                }
             }
-            if (!string.IsNullOrWhiteSpace(Lname.Text))
+            if (!(!Int32.TryParse(Lname.Text, out trashcan) && string.IsNullOrWhiteSpace(Lname.Text) ))
             {
-                controller.update_cust_info(ID, "Lname", Lname.Text);
+                if (!Regex.IsMatch(Lname.Text, pattern)&&controller.update_cust_info(ID, "Lname", Lname.Text) == 1)
+                {
+                    MessageBox.Show("last name updated");
+                }
             }
             if (checkBox1.Checked)
             {
-                controller.update_cust_info(ID, "BDate", dateTimePicker1.Value.ToString("yyyy/MM/dd"));
+                if (controller.update_cust_info(ID, "BDate", dateTimePicker1.Value.ToString("yyyy/MM/dd")) == 1)
+                {
+                    MessageBox.Show("Birthdate updated");
+                }
             }
-            if (!string.IsNullOrWhiteSpace(phone_number.Text))
+            if (!(!Int32.TryParse(phone_number.Text, out trashcan) && phone_number.Text.Length != 11))
             {
-                controller.update_cust_info(ID, "phone_number", phone_number.Text);
+                if (controller.update_cust_info(ID, "phone_number", phone_number.Text) == 1)
+                {
+                    MessageBox.Show("phone number updated");
+                }
             }
-            if (!string.IsNullOrWhiteSpace(email.Text))
+            if (!(!email.Text.Contains('@') && string.IsNullOrWhiteSpace(email.Text) && !Regex.IsMatch(email.Text, patternemail)))
             {
-                controller.update_cust_info(ID, "Email", email.Text);
+                if (controller.update_cust_info(ID, "Email", email.Text) == 1)
+                {
+                    MessageBox.Show("email updated");
+                }
             }
             if (!string.IsNullOrWhiteSpace(haicutdetails.Text))
             {
-                controller.update_cust_info(ID, "haircut_details", haicutdetails.Text);
+                if (controller.update_cust_info(ID, "haircut_details", haicutdetails.Text) == 1)
+                {
+                    MessageBox.Show("haircut details updated");
+                }
             }
             if (!string.IsNullOrWhiteSpace(password.Text))
             {
-                controller.update_cust_info(ID, "password", password.Text);
+                if (controller.update_cust_info(ID, "password", password.Text) == 1)
+                {
+                    MessageBox.Show("password updated");
+                }
             }
-
-
-            // controller.update_cust_info(ID,"email",email.Text);
         }
     }
 }

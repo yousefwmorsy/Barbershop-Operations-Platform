@@ -56,6 +56,11 @@ namespace Barbershop_Operations_Platform
 
             }
         }
+        public int getpoints(int id)
+        {
+            string query = "SELECT points FROM customer WHERE custID = " + id + ";";
+            return (int)dbMan.ExecuteScalar(query);
+        }
         public int update_cust_info(int ID, string attribute, string value)
         {
             if (attribute == "password")
@@ -78,7 +83,7 @@ namespace Barbershop_Operations_Platform
         public DataTable Get_cust_history(int id)
         {
             //barber name ,service name ,price,comment ,rating,appointment time ,status
-            string query = "SELECT CONCAT(employee.first_name,' ',employee.last_name)AS BarberName,appointment.status,appointment.appointmentTime,custcomment,rating,service.service_name FROM appointment INNER JOIN service ON serviceID=service_id  INNER JOIN employee ON barberid=EMP_id WHERE customerID = " + id + "AND status=finished;";
+            string query = "SELECT appointmentID ,CONCAT(employee.first_name,' ',employee.last_name)AS BarberName,appointment.status,appointment.appointmentTime,custcomment,rating,service.service_name,service.price FROM appointment INNER JOIN service ON serviceID=service_id  INNER JOIN employee ON barberid=EMP_id WHERE customerID = " + id + "AND Appointment.Status='done' ;";
             return dbMan.ExecuteReader(query);
         }
         public DataTable getservices()
@@ -86,12 +91,24 @@ namespace Barbershop_Operations_Platform
             string query = "SELECT Service_id,service_name FROM service";
             return (DataTable)dbMan.ExecuteReader(query);
         }
-        public int getprice(string id) {
-           
-            string query = "SELECT price FROM service WHERE service_id = " + Int32.Parse(id)+ ";";
-            return (int)dbMan.ExecuteScalar(query);
+        public int getprice(string id, string date)
+        {
+
+            string query = "SELECT price FROM service WHERE service_id = " + Int32.Parse(id) + ";";
+
+            int price = (int)dbMan.ExecuteScalar(query);
+            //check if the price is discounted
+            query = "SELECT 1 FROM offers WHERE service_id = " + Int32.Parse(id) +
+                    " AND '" + date + "' BETWEEN start_date AND end_date;";
+            object result = dbMan.ExecuteScalar(query);
+            if (result!= null)
+            {
+                return (int)(price * 0.75);
+            }
+            return price;
         }
-        public int add_appointment(int custid, int serviceid, int paymentid, string time) {
+        public int add_appointment(int custid, int serviceid, int paymentid, string time)
+        {
             string query = "INSERT INTO appointment (customerID, serviceID, paymentID, barberID, appointmentTime, status) VALUES " +
                "('" + custid + "', '" + serviceid + "', '" + paymentid + "', NULL, '" + time + "', 'Pending');";
 
@@ -99,11 +116,29 @@ namespace Barbershop_Operations_Platform
             //  " ('" + custid + "','" + serviceid + "','" + paymentid + ", NULL ," + time  + "','" + "Pending" + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int addpayment(string method,int amount)
+        public int addpayment(string method, int amount)
         {
             string query = "INSERT INTO Payment_Transaction (type,payment_method,status,amount) VALUES " +
-              " ('" + "incoming"+"','"+ method +"','"+"Pending"+"','"+amount+ "');  SELECT SCOPE_IDENTITY();";
-                return Int32.Parse(dbMan.ExecuteScalar(query).ToString());
+              " ('" + "Appointment" + "','" + method + "','" + "Pending" + "','" + amount + "');  SELECT SCOPE_IDENTITY();";
+            return Int32.Parse(dbMan.ExecuteScalar(query).ToString());
+        }
+
+        public void updatepoints(int id, int v)
+        {
+            string query = "UPDATE customer SET points = " + v + " WHERE custID = " + id + ";";
+            dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable get_unrated(int id)
+        {
+            string query = "SELECT appointmentID ,CONCAT(service.service_name,' ',appointment.appointmentTime)AS indetifer FROM appointment INNER JOIN service ON serviceID=service_id  INNER JOIN employee ON barberid=EMP_id WHERE customerID = " + id + "AND Appointment.Status='done' AND custcomment IS NULL;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        internal void give_feedback(string selectedValue, string selectedItem, string feedback)
+        {
+            string query = "UPDATE appointment SET rating = " + Int32.Parse(selectedItem) + ", custcomment = '" + feedback + "' WHERE appointmentID = " + Int32.Parse(selectedValue) + ";";
+            dbMan.ExecuteNonQuery(query);
         }
     }
 }

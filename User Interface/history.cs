@@ -26,7 +26,14 @@ namespace Barbershop_Operations_Platform.User_Interface
             DataTable dt = controller.Get_cust_history(ID);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
+            appointment.DataSource = controller.get_unrated(ID);
+            appointment.DisplayMember = "indetifer";
+            appointment.ValueMember = "appointmentid";
 
+            for (int i = 0; i < 6; i++)
+            {
+                rating.Items.Add(i);
+            }
 
             //comboBox1.DataSource = control.ShowEmailCombo();
             //comboBox1.DisplayMember = "";
@@ -35,7 +42,21 @@ namespace Barbershop_Operations_Platform.User_Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (rating.SelectedIndex == -1 ||string.IsNullOrWhiteSpace(feedback.Text) ) {
+            MessageBox.Show("Please fill all fields");
+            }
+            else
+            {
+                MessageBox.Show("Feedback submitted");
+                controller.give_feedback(appointment.SelectedValue.ToString(), rating.SelectedItem.ToString(), feedback.Text.ToString());
+                dataGridView1.Refresh();
+                appointment.Refresh();
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
