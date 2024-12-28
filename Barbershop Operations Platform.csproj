@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
+    <Compile Include="BarberUser\BarberAttendence.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cust_controller.cs" />
     <Compile Include="DbManager.cs" />
     <Compile Include="Form1.cs">
@@ -105,9 +107,6 @@
     </Compile>
     <Compile Include="Receptionist\ViewAppointments.Designer.cs">
       <DependentUpon>ViewAppointments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Interface\Barber.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="BarberUser\BarberAttendence.Designer.cs">
       <DependentUpon>BarberAttendence.cs</DependentUpon>
@@ -203,6 +202,9 @@
     <Compile Include="User Interface\Update_cust_data.Designer.cs">
       <DependentUpon>Update_cust_data.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BarberUser\BarberAttendence.resx">
+      <DependentUpon>BarberAttendence.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
