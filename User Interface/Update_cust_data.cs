@@ -118,5 +118,7 @@ namespace Barbershop_Operations_Platform.User_Interface
                 }
             }
         }
+
+        
     }
 }

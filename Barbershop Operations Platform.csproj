@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,12 +46,108 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Cust_controller.cs" />
+    <Compile Include="DbManager.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receptionist\AssignBarber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\AssignBarber.Designer.cs">
+      <DependentUpon>AssignBarber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\ManageAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\ManageAppointments.Designer.cs">
+      <DependentUpon>ManageAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\OfflineAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\OfflineAppointment.Designer.cs">
+      <DependentUpon>OfflineAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\OfflinePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\OfflinePayment.Designer.cs">
+      <DependentUpon>OfflinePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\ReceptionistInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\ReceptionistInfo.Designer.cs">
+      <DependentUpon>ReceptionistInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Controller.cs" />
+    <Compile Include="Receptionist\RequestDaysOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\RequestDaysOff.Designer.cs">
+      <DependentUpon>RequestDaysOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\UpdateAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\UpdateAppointment.Designer.cs">
+      <DependentUpon>UpdateAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\ViewAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\ViewAppointments.Designer.cs">
+      <DependentUpon>ViewAppointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\Barber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User Interface\Barber.Designer.cs">
+    <Compile Include="BarberUser\BarberAttendence.Designer.cs">
+      <DependentUpon>BarberAttendence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberController.cs" />
+    <Compile Include="BarberUser\Barber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\Barber.Designer.cs">
       <DependentUpon>Barber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberDaysOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberDaysOff.Designer.cs">
+      <DependentUpon>BarberDaysOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberIncident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberIncident.Designer.cs">
+      <DependentUpon>BarberIncident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberInfo.Designer.cs">
+      <DependentUpon>BarberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberSchedule.Designer.cs">
+      <DependentUpon>BarberSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarberUser\BarberSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarberUser\BarberSupplies.Designer.cs">
+      <DependentUpon>BarberSupplies.cs</DependentUpon>
     </Compile>
     <Compile Include="User Interface\Customer.cs">
       <SubType>Form</SubType>
@@ -59,7 +155,6 @@
     <Compile Include="User Interface\Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbManager.cs" />
     <Compile Include="User Interface\cust_info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,8 +179,6 @@
     <Compile Include="User Interface\Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User Interface\Receptionest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +203,39 @@
     <Compile Include="User Interface\Update_cust_data.Designer.cs">
       <DependentUpon>Update_cust_data.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Receptionist\AssignBarber.resx">
+      <DependentUpon>AssignBarber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\ManageAppointments.resx">
+      <DependentUpon>ManageAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\OfflineAppointment.resx">
+      <DependentUpon>OfflineAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\OfflinePayment.resx">
+      <DependentUpon>OfflinePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\ReceptionistInfo.resx">
+      <DependentUpon>ReceptionistInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\RequestDaysOff.resx">
+      <DependentUpon>RequestDaysOff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\UpdateAppointment.resx">
+      <DependentUpon>UpdateAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\ViewAppointments.resx">
+      <DependentUpon>ViewAppointments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Interface\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,15 +248,9 @@
     <EmbeddedResource Include="User Interface\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="User Interface\Receptionest.resx">
+      <DependentUpon>Receptionest.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="User Interface\reserve_appointment.resx">
       <DependentUpon>reserve_appointment.cs</DependentUpon>
     </EmbeddedResource>

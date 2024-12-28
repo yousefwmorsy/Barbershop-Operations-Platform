@@ -144,6 +144,7 @@
             // 
             this.NPassBox.Location = new System.Drawing.Point(224, 195);
             this.NPassBox.Name = "NPassBox";
+            this.NPassBox.PasswordChar = '*';
             this.NPassBox.Size = new System.Drawing.Size(192, 26);
             this.NPassBox.TabIndex = 1;
             // 
@@ -151,6 +152,7 @@
             // 
             this.REENPassBox.Location = new System.Drawing.Point(224, 264);
             this.REENPassBox.Name = "REENPassBox";
+            this.REENPassBox.PasswordChar = '*';
             this.REENPassBox.Size = new System.Drawing.Size(192, 26);
             this.REENPassBox.TabIndex = 1;
             // 

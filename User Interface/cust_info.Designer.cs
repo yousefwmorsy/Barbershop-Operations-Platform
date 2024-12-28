@@ -46,7 +46,7 @@
             // custumer_info
             // 
             this.custumer_info.AutoSize = true;
-            this.custumer_info.Location = new System.Drawing.Point(302, 33);
+            this.custumer_info.Location = new System.Drawing.Point(306, 99);
             this.custumer_info.Name = "custumer_info";
             this.custumer_info.Size = new System.Drawing.Size(128, 20);
             this.custumer_info.TabIndex = 1;
@@ -55,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(375, 112);
+            this.label1.Location = new System.Drawing.Point(284, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 20);
             this.label1.TabIndex = 2;
@@ -64,7 +64,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(503, 112);
+            this.name.Location = new System.Drawing.Point(412, 161);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(51, 20);
             this.name.TabIndex = 3;
@@ -73,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(378, 310);
+            this.label3.Location = new System.Drawing.Point(287, 359);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 4;
@@ -82,7 +82,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(378, 257);
+            this.label4.Location = new System.Drawing.Point(287, 306);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 5;
@@ -92,7 +92,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(375, 163);
+            this.label5.Location = new System.Drawing.Point(284, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 6;
@@ -102,7 +102,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(378, 208);
+            this.label6.Location = new System.Drawing.Point(287, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 20);
             this.label6.TabIndex = 7;
@@ -111,7 +111,7 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(378, 367);
+            this.label.Location = new System.Drawing.Point(287, 416);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(111, 20);
             this.label.TabIndex = 8;
@@ -120,7 +120,7 @@
             // BDATE
             // 
             this.BDATE.AutoSize = true;
-            this.BDATE.Location = new System.Drawing.Point(503, 163);
+            this.BDATE.Location = new System.Drawing.Point(412, 212);
             this.BDATE.Name = "BDATE";
             this.BDATE.Size = new System.Drawing.Size(51, 20);
             this.BDATE.TabIndex = 9;
@@ -129,7 +129,7 @@
             // phone
             // 
             this.phone.AutoSize = true;
-            this.phone.Location = new System.Drawing.Point(494, 208);
+            this.phone.Location = new System.Drawing.Point(403, 257);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(60, 20);
             this.phone.TabIndex = 11;
@@ -138,7 +138,7 @@
             // email
             // 
             this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(494, 257);
+            this.email.Location = new System.Drawing.Point(403, 306);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(60, 20);
             this.email.TabIndex = 12;
@@ -147,7 +147,7 @@
             // point
             // 
             this.point.AutoSize = true;
-            this.point.Location = new System.Drawing.Point(494, 310);
+            this.point.Location = new System.Drawing.Point(403, 359);
             this.point.Name = "point";
             this.point.Size = new System.Drawing.Size(60, 20);
             this.point.TabIndex = 13;
@@ -156,7 +156,7 @@
             // haircut
             // 
             this.haircut.AutoSize = true;
-            this.haircut.Location = new System.Drawing.Point(494, 367);
+            this.haircut.Location = new System.Drawing.Point(403, 416);
             this.haircut.Name = "haircut";
             this.haircut.Size = new System.Drawing.Size(60, 20);
             this.haircut.TabIndex = 14;
@@ -180,6 +180,7 @@
             this.Controls.Add(this.name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.custumer_info);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "cust_info";
             this.Text = "cust_info";
             this.Load += new System.EventHandler(this.cust_info_Load);
