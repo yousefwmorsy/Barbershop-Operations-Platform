@@ -38,9 +38,10 @@
             // ViewButton
             // 
             this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewButton.Location = new System.Drawing.Point(25, 37);
+            this.ViewButton.Location = new System.Drawing.Point(33, 46);
+            this.ViewButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewButton.Name = "ViewButton";
-            this.ViewButton.Size = new System.Drawing.Size(990, 59);
+            this.ViewButton.Size = new System.Drawing.Size(1021, 74);
             this.ViewButton.TabIndex = 0;
             this.ViewButton.Text = "View Days-Off Requests";
             this.ViewButton.UseVisualStyleBackColor = true;
@@ -49,19 +50,21 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 148);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(990, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(1021, 405);
             this.dataGridView1.TabIndex = 1;
             // 
             // DeclineButton
             // 
             this.DeclineButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeclineButton.Location = new System.Drawing.Point(25, 459);
+            this.DeclineButton.Location = new System.Drawing.Point(33, 574);
+            this.DeclineButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeclineButton.Name = "DeclineButton";
-            this.DeclineButton.Size = new System.Drawing.Size(317, 83);
+            this.DeclineButton.Size = new System.Drawing.Size(423, 104);
             this.DeclineButton.TabIndex = 0;
             this.DeclineButton.Text = "Decline Selected Request";
             this.DeclineButton.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // AcceptButton
             // 
             this.AcceptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AcceptButton.Location = new System.Drawing.Point(714, 459);
+            this.AcceptButton.Location = new System.Drawing.Point(653, 574);
+            this.AcceptButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AcceptButton.Name = "AcceptButton";
-            this.AcceptButton.Size = new System.Drawing.Size(301, 83);
+            this.AcceptButton.Size = new System.Drawing.Size(401, 104);
             this.AcceptButton.TabIndex = 0;
             this.AcceptButton.Text = "Accept Selected Request";
             this.AcceptButton.UseVisualStyleBackColor = true;
@@ -80,14 +84,15 @@
             // 
             // ManageDaysOff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 728);
+            this.ClientSize = new System.Drawing.Size(1108, 910);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AcceptButton);
             this.Controls.Add(this.DeclineButton);
             this.Controls.Add(this.ViewButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManageDaysOff";
             this.Text = "ManageDaysOff";
             this.Load += new System.EventHandler(this.ManageDaysOff_Load);

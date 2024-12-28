@@ -180,9 +180,24 @@ namespace Barbershop_Operations_Platform
             string query = $"SELECT CustomerID from Appointment WHERE PaymentID = {payid}";
             return (int)dbMan.ExecuteScalar(query);
         }
+
+        public int GetAmount(int appid)
+        {
+            string query = $"SELECT QuantityConsumed FROM ServiceConsumes as s, Appointment as a  WHERE s.ServiceID = a.ServiceID AND AppointmentID = {appid}";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int ServiceConsumes(int appid)
+        {
+            string query = $"SELECT SupplyID FROM ServiceConsumes as s, Appointment as a WHERE s.ServiceID = a.ServiceID AND AppointmentID = {appid}";
+            int supid = (int)dbMan.ExecuteScalar(query);
+            string query2 = $"UPDATE Inventory SET Quantity -= {GetAmount(appid)} WHERE SupplyID = {supid}";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public int MarkDone(int appid)
         {
             string query = $"UPDATE Appointment SET Status = 'Done' WHERE AppointmentID = {appid}";
+            ServiceConsumes(appid);
             return dbMan.ExecuteNonQuery(query);
         }
 

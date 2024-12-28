@@ -33,7 +33,7 @@ namespace Barbershop_Operations_Platform.BarberUser
             DateTime start = startDate_datePicker.Value.Date;
             DateTime end = endDate_datePicker.Value.Date;
             DateTime today = DateTime.Today;
-            if (start <= today || end <= today)
+            if ((start <= today || end <= today) || (start>end))
             {
                 MessageBox.Show("Enter Valid Dates");
                 return;

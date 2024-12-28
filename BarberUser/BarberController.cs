@@ -118,8 +118,8 @@ namespace Barbershop_Operations_Platform
             string date = DateTime.Today.ToString("yyyy-MM-dd");
             string query = $"Select StartDate, EndDate, Status " +
             $"From DaysOffRequest d " +
-            $"Where EmployeeID = {barberid} AND EndDate >= '{date} " +
-            $"ORDER BY EndDate ASC';";
+            $"Where EmployeeID = {barberid} AND EndDate >= '{date}' " +
+            $"ORDER BY EndDate ASC;";
             return dbMan.ExecuteReader(query);
         }
         public int InsertDaysOffRequest(int empid, string startDate, string endDate)

@@ -16,14 +16,14 @@ namespace Barbershop_Operations_Platform
         int id;
         DBManager dbMan;
         Receptionist_Controller controllerObj;
-        Login_Form loginForm;
-        public Receptionest(Login_Form form, int id)
+        
+        public Receptionest(int id)
         {
             InitializeComponent();
             dbMan = new DBManager();
             controllerObj = new Receptionist_Controller(dbMan);
             this.id = id;
-            loginForm = form;
+         
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -98,7 +98,6 @@ namespace Barbershop_Operations_Platform
 
         private void button5_Click(object sender, EventArgs e)
         {
-            loginForm.Show();
             this.Close();
         }
     }

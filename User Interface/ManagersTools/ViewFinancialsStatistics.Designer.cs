@@ -47,114 +47,129 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 45);
+            this.label1.Location = new System.Drawing.Point(76, 87);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 13);
+            this.label1.Size = new System.Drawing.Size(343, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer With Most Appointments";
             // 
             // maxAppointments_label
             // 
             this.maxAppointments_label.AutoSize = true;
-            this.maxAppointments_label.Location = new System.Drawing.Point(52, 69);
+            this.maxAppointments_label.Location = new System.Drawing.Point(104, 133);
+            this.maxAppointments_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.maxAppointments_label.Name = "maxAppointments_label";
-            this.maxAppointments_label.Size = new System.Drawing.Size(35, 13);
+            this.maxAppointments_label.Size = new System.Drawing.Size(70, 25);
             this.maxAppointments_label.TabIndex = 1;
             this.maxAppointments_label.Text = "label2";
             // 
             // avgRequestCost_label
             // 
             this.avgRequestCost_label.AutoSize = true;
-            this.avgRequestCost_label.Location = new System.Drawing.Point(196, 152);
+            this.avgRequestCost_label.Location = new System.Drawing.Point(392, 292);
+            this.avgRequestCost_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.avgRequestCost_label.Name = "avgRequestCost_label";
-            this.avgRequestCost_label.Size = new System.Drawing.Size(86, 13);
+            this.avgRequestCost_label.Size = new System.Drawing.Size(171, 25);
             this.avgRequestCost_label.TabIndex = 3;
             this.avgRequestCost_label.Text = "avgRequestCost";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 152);
+            this.label4.Location = new System.Drawing.Point(76, 292);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 13);
+            this.label4.Size = new System.Drawing.Size(300, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "Average Supply Request Cost";
             // 
             // numDaysOff_label
             // 
             this.numDaysOff_label.AutoSize = true;
-            this.numDaysOff_label.Location = new System.Drawing.Point(222, 261);
+            this.numDaysOff_label.Location = new System.Drawing.Point(444, 502);
+            this.numDaysOff_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.numDaysOff_label.Name = "numDaysOff_label";
-            this.numDaysOff_label.Size = new System.Drawing.Size(35, 13);
+            this.numDaysOff_label.Size = new System.Drawing.Size(70, 25);
             this.numDaysOff_label.TabIndex = 5;
             this.numDaysOff_label.Text = "label5";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 261);
+            this.label6.Location = new System.Drawing.Point(76, 502);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 13);
+            this.label6.Size = new System.Drawing.Size(354, 25);
             this.label6.TabIndex = 4;
             this.label6.Text = "Total Number Of Day Offs Accepted";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(339, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(678, 87);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(415, 150);
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.Size = new System.Drawing.Size(830, 288);
             this.dataGridView1.TabIndex = 6;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(339, 224);
+            this.dataGridView2.Location = new System.Drawing.Point(678, 431);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(415, 150);
+            this.dataGridView2.RowHeadersWidth = 82;
+            this.dataGridView2.Size = new System.Drawing.Size(830, 288);
             this.dataGridView2.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 346);
+            this.label2.Location = new System.Drawing.Point(82, 665);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Total Profit";
             // 
             // totalProfit_label
             // 
             this.totalProfit_label.AutoSize = true;
-            this.totalProfit_label.Location = new System.Drawing.Point(106, 346);
+            this.totalProfit_label.Location = new System.Drawing.Point(212, 665);
+            this.totalProfit_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.totalProfit_label.Name = "totalProfit_label";
-            this.totalProfit_label.Size = new System.Drawing.Size(35, 13);
+            this.totalProfit_label.Size = new System.Drawing.Size(70, 25);
             this.totalProfit_label.TabIndex = 9;
             this.totalProfit_label.Text = "label3";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(339, 26);
+            this.label3.Location = new System.Drawing.Point(678, 50);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 13);
+            this.label3.Size = new System.Drawing.Size(214, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Customer Total Profit";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(339, 208);
+            this.label5.Location = new System.Drawing.Point(678, 400);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.Size = new System.Drawing.Size(182, 25);
             this.label5.TabIndex = 11;
             this.label5.Text = "Supply Total Cost";
             // 
-            // ViewFS
+            // ViewFinancialsStatistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.totalProfit_label);
@@ -168,7 +183,8 @@
             this.Controls.Add(this.maxAppointments_label);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ViewFS";
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Name = "ViewFinancialsStatistics";
             this.Text = "ViewFS";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

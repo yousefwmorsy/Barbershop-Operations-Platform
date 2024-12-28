@@ -41,10 +41,16 @@ namespace Barbershop_Operations_Platform
             return -1; 
         }
         
-        public int GetEmployeeID(string password)
+        public int GetEmployeeID(string email)
         {
-            string Query = $"SELECT Emp_id FROM Employee WHERE Password = '{password}';";
+            string Query = $"SELECT Emp_id FROM Employee WHERE Email = '{email}';";
             return (int)dbMan.ExecuteScalar(Query);
+        }
+
+        public int GetUserID(string email)
+        {
+            string query = $"SELECT CustID FROM Customer WHERE Email = '{email}'";
+            return (int)dbMan.ExecuteScalar(query);
         }
 
         public void TerminateConnection()

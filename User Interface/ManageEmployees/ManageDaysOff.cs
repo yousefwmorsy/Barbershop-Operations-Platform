@@ -38,6 +38,8 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             else
             {
                 daysOff.DeclineRequest((int)dataGridView1.CurrentCell.Value);
+                dataGridView1.DataSource = daysOff.ViewDaysOff();
+
             }
         }
 
@@ -52,8 +54,10 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             else
             {
                 daysOff.AcceptRequest((int)dataGridView1.Rows[RowIndex].Cells[ColumnIndex].Value, (int)dataGridView1.Rows[RowIndex].Cells[ColumnIndex + 1].Value);
+                dataGridView1.DataSource = daysOff.ViewDaysOff();
+
             }
-            
+
         }
     }
 }

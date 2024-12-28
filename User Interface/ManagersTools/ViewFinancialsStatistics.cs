@@ -35,5 +35,10 @@ namespace Barbershop_Operations_Platform.User_Interface.ManagersTools
 
             totalProfit_label.Text = controller.GetTotalProfit().ToString();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

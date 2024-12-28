@@ -31,7 +31,7 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             if (string.IsNullOrEmpty(FNameBox.Text) || string.IsNullOrEmpty(LNameBox.Text) || string.IsNullOrEmpty(MID.ToString()) || string.IsNullOrEmpty(PNumberBox.Text) || string.IsNullOrEmpty(AddressBox.Text)
                 || string.IsNullOrEmpty(EmailBox.Text) || string.IsNullOrEmpty(PasswordBox.Text))
             {
-                MessageBox.Show("Can't Insert a Barber\nOne or More Fields is Empty");
+                MessageBox.Show("Can't Insert Receptionist\nOne or More Fields is Empty");
             }
             else
             {

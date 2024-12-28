@@ -43,9 +43,10 @@
             // info_button
             // 
             this.info_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.info_button.Location = new System.Drawing.Point(51, 80);
+            this.info_button.Location = new System.Drawing.Point(13, 137);
+            this.info_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.info_button.Name = "info_button";
-            this.info_button.Size = new System.Drawing.Size(234, 63);
+            this.info_button.Size = new System.Drawing.Size(427, 134);
             this.info_button.TabIndex = 0;
             this.info_button.Text = "view information";
             this.info_button.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // update
             // 
             this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.update.Location = new System.Drawing.Point(51, 200);
+            this.update.Location = new System.Drawing.Point(13, 279);
+            this.update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(234, 69);
+            this.update.Size = new System.Drawing.Size(427, 142);
             this.update.TabIndex = 1;
             this.update.Text = "Update Details";
             this.update.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@
             // reserve
             // 
             this.reserve.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.reserve.Location = new System.Drawing.Point(51, 333);
+            this.reserve.Location = new System.Drawing.Point(13, 429);
+            this.reserve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reserve.Name = "reserve";
-            this.reserve.Size = new System.Drawing.Size(234, 69);
+            this.reserve.Size = new System.Drawing.Size(427, 146);
             this.reserve.TabIndex = 2;
             this.reserve.Text = "reserve apppointment";
             this.reserve.UseVisualStyleBackColor = true;
@@ -75,10 +78,11 @@
             // 
             // history
             // 
-            this.history.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.history.Location = new System.Drawing.Point(51, 469);
+            this.history.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.history.Location = new System.Drawing.Point(13, 583);
+            this.history.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.history.Name = "history";
-            this.history.Size = new System.Drawing.Size(234, 69);
+            this.history.Size = new System.Drawing.Size(427, 134);
             this.history.TabIndex = 3;
             this.history.Text = "history";
             this.history.UseVisualStyleBackColor = true;
@@ -88,6 +92,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -99,8 +104,9 @@
             this.splitContainer1.Panel1.Controls.Add(this.reserve);
             this.splitContainer1.Panel1.Controls.Add(this.info_button);
             this.splitContainer1.Panel1.Controls.Add(this.update);
-            this.splitContainer1.Size = new System.Drawing.Size(1202, 693);
-            this.splitContainer1.SplitterDistance = 399;
+            this.splitContainer1.Size = new System.Drawing.Size(1603, 866);
+            this.splitContainer1.SplitterDistance = 453;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 4;
             // 
             // button1
@@ -108,9 +114,10 @@
             this.button1.BackColor = System.Drawing.Color.Silver;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(76, 590);
+            this.button1.Location = new System.Drawing.Point(13, 763);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 43);
+            this.button1.Size = new System.Drawing.Size(427, 72);
             this.button1.TabIndex = 4;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = false;
@@ -120,18 +127,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(45, 21);
+            this.label1.Location = new System.Drawing.Point(115, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 36);
+            this.label1.Size = new System.Drawing.Size(193, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer";
             // 
             // Customer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 693);
+            this.ClientSize = new System.Drawing.Size(1603, 866);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Customer";
             this.Text = "Customer";
             this.Load += new System.EventHandler(this.Customer_Load);

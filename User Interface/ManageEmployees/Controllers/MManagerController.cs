@@ -18,7 +18,7 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
         public DataTable ViewManagers()
         {
             string Query = "SELECT E.Emp_id, E.First_name, E.Last_name " +
-                "FROM Employee AS E, Manager AS M WHERE E.Emp_id = M.Emp_id;";
+                "FROM Employee AS E, Manager AS M WHERE E.Emp_id = M.Emp_id AND E.Emp_id!=1;";
             return dbMan.ExecuteReader(Query);
         }
 

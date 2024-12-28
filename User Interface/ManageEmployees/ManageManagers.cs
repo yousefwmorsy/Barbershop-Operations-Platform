@@ -26,7 +26,7 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             if (string.IsNullOrEmpty(FNameBox.Text) || string.IsNullOrEmpty(LNameBox.Text) || string.IsNullOrEmpty(MID.ToString()) || string.IsNullOrEmpty(PNumberBox.Text) || string.IsNullOrEmpty(AddressBox.Text)
                 || string.IsNullOrEmpty(EmailBox.Text) || string.IsNullOrEmpty(PasswordBox.Text))
             {
-                MessageBox.Show("Can't Insert a Barber\nOne or More Fields is Empty");
+                MessageBox.Show("Can't Insert Manager\nOne or More Fields is Empty");
             }
             else
             {
@@ -50,7 +50,7 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
                 int r = managerController.InsertManager(FNameBox.Text, LNameBox.Text, MID, PNumberBox.Text, AddressBox.Text, EmailBox.Text, PasswordBox.Text);
                 if (r != 0)
                 {
-                    MessageBox.Show("Employee has been added successfully");
+                    MessageBox.Show("Manager has been added successfully");
                 }
             }
         }

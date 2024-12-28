@@ -34,31 +34,31 @@ namespace Barbershop_Operations_Platform
             int u = loginController.GetSignedUser(Usernamebox.Text, PasswoedBox.Text);
             switch (u){
                 case 0:
-                    Form FC = new Customer();
+                    Form FC = new Customer(loginController.GetUserID(Usernamebox.Text));
                     this.Hide();
                     FC.ShowDialog();
                     this.Show();
                     break;
                 case 1:
-                    Form FB = new Barber();
+                    Form FB = new Barber(loginController.GetEmployeeID(Usernamebox.Text));
                     this.Hide();
                     FB.ShowDialog();
                     this.Show();
                     break;
                 case 2:
-                    Form FR = new Receptionest();
+                    Form FR = new Receptionest(loginController.GetEmployeeID(Usernamebox.Text));
                     this.Hide();
                     FR.ShowDialog();
                     this.Show();
                     break;
                 case 3:
-                    Form FM = new Manager(false, loginController.GetEmployeeID(PasswoedBox.Text));
+                    Form FM = new Manager(false, loginController.GetEmployeeID(Usernamebox.Text));
                     this.Hide();
                     FM.ShowDialog();
                     this.Show();
                     break;
                 case 4:
-                    Form FSM = new Manager(true, loginController.GetEmployeeID(PasswoedBox.Text));
+                    Form FSM = new Manager(true, loginController.GetEmployeeID(Usernamebox.Text));
                     this.Hide();
                     FSM.ShowDialog();
                     this.Show();
