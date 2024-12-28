@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Barbershop_Operations_Platform.Receptionist
 {
@@ -63,6 +65,11 @@ namespace Barbershop_Operations_Platform.Receptionist
             if (textBox6.Text.Length != 0 && textBox6.Text.Contains("@"))
             {
                 //email updating
+                if (!Regex.IsMatch(textBox6.Text, @"^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                {
+                    MessageBox.Show("Enter Valid Email");
+                    return;
+                }
                 if (controllerObj.UpdateEmail(id, textBox6.Text) != 0)
                     MessageBox.Show("Email updated successfully");
                 else MessageBox.Show("Error!");
