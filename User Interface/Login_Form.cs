@@ -30,5 +30,10 @@ namespace Barbershop_Operations_Platform
             F.ShowDialog();
             this.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

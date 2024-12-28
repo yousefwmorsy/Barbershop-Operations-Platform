@@ -92,11 +92,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 347);
+            this.label1.Location = new System.Drawing.Point(28, 347);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 20);
+            this.label1.Size = new System.Drawing.Size(235, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Don\'t have an email, Signup";
+            this.label1.Text = "Don\'t have an account ? Signup";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
