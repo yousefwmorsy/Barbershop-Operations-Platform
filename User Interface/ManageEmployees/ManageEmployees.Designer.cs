@@ -49,7 +49,7 @@
             // ManageReceptionistsButton
             // 
             this.ManageReceptionistsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ManageReceptionistsButton.Location = new System.Drawing.Point(12, 332);
+            this.ManageReceptionistsButton.Location = new System.Drawing.Point(12, 317);
             this.ManageReceptionistsButton.Name = "ManageReceptionistsButton";
             this.ManageReceptionistsButton.Size = new System.Drawing.Size(277, 74);
             this.ManageReceptionistsButton.TabIndex = 0;
@@ -60,7 +60,7 @@
             // ManageDaysOffButton
             // 
             this.ManageDaysOffButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ManageDaysOffButton.Location = new System.Drawing.Point(12, 437);
+            this.ManageDaysOffButton.Location = new System.Drawing.Point(12, 422);
             this.ManageDaysOffButton.Name = "ManageDaysOffButton";
             this.ManageDaysOffButton.Size = new System.Drawing.Size(277, 74);
             this.ManageDaysOffButton.TabIndex = 0;
@@ -71,7 +71,7 @@
             // ManageManagers
             // 
             this.ManageManagers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ManageManagers.Location = new System.Drawing.Point(12, 543);
+            this.ManageManagers.Location = new System.Drawing.Point(12, 528);
             this.ManageManagers.Name = "ManageManagers";
             this.ManageManagers.Size = new System.Drawing.Size(277, 74);
             this.ManageManagers.TabIndex = 0;

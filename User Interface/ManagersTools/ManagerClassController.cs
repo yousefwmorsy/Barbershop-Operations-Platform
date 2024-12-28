@@ -145,6 +145,23 @@ namespace Barbershop_Operations_Platform.User_Interface.ManagersTools
             return dbMan.ExecuteReader(Query);
         }
 
+
+
+        public int EditPersonalInfo(int ID, string FName, string LName, string PNum, string Address, string Email, string Password)
+        {
+            string Query = $"UPDATE Employee SET First_name = '{FName}', Last_name = '{LName}', Phone_number = '{PNum}', Address = '{Address}', Email = '{Email}' , Password = '{Password}' " +
+                $" WHERE Emp_id = {ID} ;";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+
+        public DataTable GetPersonalInformation(int ID)
+        {
+            string Query = "SELECT First_name, Last_name, Phone_number, Address, Email " +
+                $"FROM Employee WHERE Emp_id = {ID};";
+            return dbMan.ExecuteReader(Query);
+        }
+
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

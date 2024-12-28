@@ -39,9 +39,9 @@
             // ViewButton
             // 
             this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ViewButton.Location = new System.Drawing.Point(12, 401);
+            this.ViewButton.Location = new System.Drawing.Point(24, 418);
             this.ViewButton.Name = "ViewButton";
-            this.ViewButton.Size = new System.Drawing.Size(519, 57);
+            this.ViewButton.Size = new System.Drawing.Size(816, 57);
             this.ViewButton.TabIndex = 6;
             this.ViewButton.Text = "View Selected Customer";
             this.ViewButton.UseVisualStyleBackColor = true;
@@ -50,30 +50,31 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 464);
+            this.dataGridView2.Location = new System.Drawing.Point(20, 491);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(770, 311);
+            this.dataGridView2.Size = new System.Drawing.Size(816, 311);
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(165, 21);
+            this.dataGridView1.Location = new System.Drawing.Point(177, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(617, 374);
+            this.dataGridView1.Size = new System.Drawing.Size(663, 374);
             this.dataGridView1.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 20);
+            this.label1.Size = new System.Drawing.Size(167, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Custoners Tabels";
             // 
@@ -81,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 817);
+            this.ClientSize = new System.Drawing.Size(852, 821);
             this.Controls.Add(this.ViewButton);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -89,6 +90,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewCustomer_sHistories";
             this.Text = "ViewCustomer_sHistories";
+            this.Load += new System.EventHandler(this.ViewCustomer_sHistories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

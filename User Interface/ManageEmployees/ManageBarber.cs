@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
 {
@@ -61,6 +63,38 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             }
             else
             {
+                if (!(FNameBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                {
+                    MessageBox.Show("Names must contain only letters.");
+                    return;
+                }
+                if (!(LNameBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                {
+                    MessageBox.Show("Names must contain only letters.");
+                    return;
+                }
+                if (!Regex.IsMatch(EmailBox.Text, @"^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                {
+                    MessageBox.Show("Enter Valid Email");
+                    return;
+                }
+                if (!(REPasswordBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                {
+                    MessageBox.Show("Password must contain only letters.");
+                    return;
+                }
+                if (!(PasswordBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                {
+                    MessageBox.Show("Re-Password must contain only letters.");
+                    return;
+                }
+                if (PasswordBox.Text != REPasswordBox.Text)
+                {
+                    MessageBox.Show("Password Doesn't Match");
+                    return;
+                }
+
+
                 if (TimeSpan.Parse(HoursComboBox1.SelectedItem.ToString()) > TimeSpan.Parse(HoursComboBox2.SelectedItem.ToString()))
                 {
                     MessageBox.Show("Can't Insert a Barber\nStarting time should be less than Ending time");
@@ -79,6 +113,11 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
         }
 
         private void ManageBarber_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FNameBox_TextChanged(object sender, EventArgs e)
         {
 
         }

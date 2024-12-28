@@ -30,14 +30,30 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
 
         private void DeclineButton_Click(object sender, EventArgs e)
         {
-            daysOff.DeclineRequest((int)dataGridView1.CurrentCell.Value);
+            int ColumnIndex = dataGridView1.CurrentCell.ColumnIndex;
+            if (ColumnIndex != 0)
+            {
+                MessageBox.Show("Invalid Request's ID");
+            }
+            else
+            {
+                daysOff.DeclineRequest((int)dataGridView1.CurrentCell.Value);
+            }
         }
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
             int RowIndex = dataGridView1.CurrentCell.RowIndex;
             int ColumnIndex = dataGridView1.CurrentCell.ColumnIndex;
-            daysOff.AcceptRequest((int)dataGridView1.Rows[RowIndex].Cells[ColumnIndex].Value, (int)dataGridView1.Rows[RowIndex].Cells[ColumnIndex + 1].Value);
+            if (ColumnIndex != 0)
+            {
+                MessageBox.Show("Invalid Request's ID");
+            }
+            else
+            {
+                daysOff.AcceptRequest((int)dataGridView1.Rows[RowIndex].Cells[ColumnIndex].Value, (int)dataGridView1.Rows[RowIndex].Cells[ColumnIndex + 1].Value);
+            }
+            
         }
     }
 }

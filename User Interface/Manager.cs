@@ -109,12 +109,17 @@ namespace Barbershop_Operations_Platform
 
         private void EditPersonalInfoButton_Click(object sender, EventArgs e)
         {
-            Form F = new EditPersonalInfo();
+            Form F = new EditPersonalInfo(i);
             F.Dock = DockStyle.Fill;
             F.TopLevel = false;
             panel1.Controls.Clear();
             panel1.Controls.Add(F);
             F.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

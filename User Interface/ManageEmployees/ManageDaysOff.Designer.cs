@@ -37,9 +37,10 @@
             // 
             // ViewButton
             // 
-            this.ViewButton.Location = new System.Drawing.Point(25, 34);
+            this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewButton.Location = new System.Drawing.Point(25, 37);
             this.ViewButton.Name = "ViewButton";
-            this.ViewButton.Size = new System.Drawing.Size(502, 59);
+            this.ViewButton.Size = new System.Drawing.Size(990, 59);
             this.ViewButton.TabIndex = 0;
             this.ViewButton.Text = "View Days-Off Requests";
             this.ViewButton.UseVisualStyleBackColor = true;
@@ -52,14 +53,15 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(502, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(990, 324);
             this.dataGridView1.TabIndex = 1;
             // 
             // DeclineButton
             // 
+            this.DeclineButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeclineButton.Location = new System.Drawing.Point(25, 459);
             this.DeclineButton.Name = "DeclineButton";
-            this.DeclineButton.Size = new System.Drawing.Size(217, 45);
+            this.DeclineButton.Size = new System.Drawing.Size(317, 83);
             this.DeclineButton.TabIndex = 0;
             this.DeclineButton.Text = "Decline Selected Request";
             this.DeclineButton.UseVisualStyleBackColor = true;
@@ -67,9 +69,10 @@
             // 
             // AcceptButton
             // 
-            this.AcceptButton.Location = new System.Drawing.Point(310, 459);
+            this.AcceptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AcceptButton.Location = new System.Drawing.Point(714, 459);
             this.AcceptButton.Name = "AcceptButton";
-            this.AcceptButton.Size = new System.Drawing.Size(217, 45);
+            this.AcceptButton.Size = new System.Drawing.Size(301, 83);
             this.AcceptButton.TabIndex = 0;
             this.AcceptButton.Text = "Accept Selected Request";
             this.AcceptButton.UseVisualStyleBackColor = true;
@@ -79,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 728);
+            this.ClientSize = new System.Drawing.Size(1027, 728);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AcceptButton);
             this.Controls.Add(this.DeclineButton);

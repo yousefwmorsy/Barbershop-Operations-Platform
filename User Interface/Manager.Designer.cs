@@ -32,10 +32,6 @@
             this.ManageEmployeesButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.HelloLabel = new System.Windows.Forms.Label();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.IDLabel = new System.Windows.Forms.Label();
-            this.RoleLabel = new System.Windows.Forms.Label();
-            this.Emaillabel = new System.Windows.Forms.Label();
             this.EditPersonalInfoButton = new System.Windows.Forms.Button();
             this.ViewBHistoriesButton = new System.Windows.Forms.Button();
             this.ViewFSButton = new System.Windows.Forms.Button();
@@ -43,15 +39,15 @@
             this.ReciveInReButton = new System.Windows.Forms.Button();
             this.ViewCHistoriesButton = new System.Windows.Forms.Button();
             this.EditPInfo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ManageSupplysReqButton
             // 
             this.ManageSupplysReqButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageSupplysReqButton.Location = new System.Drawing.Point(18, 77);
-            this.ManageSupplysReqButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ManageSupplysReqButton.Location = new System.Drawing.Point(32, 238);
             this.ManageSupplysReqButton.Name = "ManageSupplysReqButton";
-            this.ManageSupplysReqButton.Size = new System.Drawing.Size(204, 34);
+            this.ManageSupplysReqButton.Size = new System.Drawing.Size(306, 52);
             this.ManageSupplysReqButton.TabIndex = 0;
             this.ManageSupplysReqButton.Text = "Manage Supply Requests";
             this.ManageSupplysReqButton.UseVisualStyleBackColor = true;
@@ -60,10 +56,9 @@
             // ManageEmployeesButton
             // 
             this.ManageEmployeesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageEmployeesButton.Location = new System.Drawing.Point(18, 39);
-            this.ManageEmployeesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ManageEmployeesButton.Location = new System.Drawing.Point(32, 180);
             this.ManageEmployeesButton.Name = "ManageEmployeesButton";
-            this.ManageEmployeesButton.Size = new System.Drawing.Size(204, 34);
+            this.ManageEmployeesButton.Size = new System.Drawing.Size(306, 52);
             this.ManageEmployeesButton.TabIndex = 0;
             this.ManageEmployeesButton.Text = "Manage Employees";
             this.ManageEmployeesButton.UseVisualStyleBackColor = true;
@@ -71,72 +66,29 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(356, 14);
+            this.panel1.Location = new System.Drawing.Point(364, 22);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1250, 862);
+            this.panel1.Size = new System.Drawing.Size(1326, 875);
             this.panel1.TabIndex = 1;
             // 
             // HelloLabel
             // 
             this.HelloLabel.AutoSize = true;
-            this.HelloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HelloLabel.Location = new System.Drawing.Point(18, 15);
-            this.HelloLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.HelloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HelloLabel.Location = new System.Drawing.Point(82, 66);
             this.HelloLabel.Name = "HelloLabel";
-            this.HelloLabel.Size = new System.Drawing.Size(40, 17);
+            this.HelloLabel.Size = new System.Drawing.Size(201, 82);
             this.HelloLabel.TabIndex = 2;
             this.HelloLabel.Text = "Hello";
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.NameLabel.Location = new System.Drawing.Point(27, 502);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(57, 17);
-            this.NameLabel.TabIndex = 2;
-            this.NameLabel.Text = "Name:; ";
-            // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.IDLabel.Location = new System.Drawing.Point(18, 362);
-            this.IDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(29, 17);
-            this.IDLabel.TabIndex = 2;
-            this.IDLabel.Text = "ID: ";
-            // 
-            // RoleLabel
-            // 
-            this.RoleLabel.AutoSize = true;
-            this.RoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.RoleLabel.Location = new System.Drawing.Point(18, 399);
-            this.RoleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.RoleLabel.Name = "RoleLabel";
-            this.RoleLabel.Size = new System.Drawing.Size(45, 17);
-            this.RoleLabel.TabIndex = 2;
-            this.RoleLabel.Text = "Role: ";
-            // 
-            // Emaillabel
-            // 
-            this.Emaillabel.AutoSize = true;
-            this.Emaillabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Emaillabel.Location = new System.Drawing.Point(18, 431);
-            this.Emaillabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Emaillabel.Name = "Emaillabel";
-            this.Emaillabel.Size = new System.Drawing.Size(50, 17);
-            this.Emaillabel.TabIndex = 2;
-            this.Emaillabel.Text = "Email: ";
             // 
             // EditPersonalInfoButton
             // 
             this.EditPersonalInfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditPersonalInfoButton.Location = new System.Drawing.Point(40, 1094);
-            this.EditPersonalInfoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.EditPersonalInfoButton.Location = new System.Drawing.Point(60, 1683);
+            this.EditPersonalInfoButton.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.EditPersonalInfoButton.Name = "EditPersonalInfoButton";
-            this.EditPersonalInfoButton.Size = new System.Drawing.Size(459, 120);
+            this.EditPersonalInfoButton.Size = new System.Drawing.Size(688, 185);
             this.EditPersonalInfoButton.TabIndex = 0;
             this.EditPersonalInfoButton.Text = "Edit Personal Information";
             this.EditPersonalInfoButton.UseVisualStyleBackColor = true;
@@ -145,9 +97,10 @@
             // ViewBHistoriesButton
             // 
             this.ViewBHistoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewBHistoriesButton.Location = new System.Drawing.Point(27, 175);
+            this.ViewBHistoriesButton.Location = new System.Drawing.Point(32, 356);
+            this.ViewBHistoriesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ViewBHistoriesButton.Name = "ViewBHistoriesButton";
-            this.ViewBHistoriesButton.Size = new System.Drawing.Size(204, 34);
+            this.ViewBHistoriesButton.Size = new System.Drawing.Size(306, 52);
             this.ViewBHistoriesButton.TabIndex = 0;
             this.ViewBHistoriesButton.Text = "View Barber\'s Histories";
             this.ViewBHistoriesButton.UseVisualStyleBackColor = true;
@@ -156,10 +109,9 @@
             // ViewFSButton
             // 
             this.ViewFSButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewFSButton.Location = new System.Drawing.Point(18, 190);
-            this.ViewFSButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewFSButton.Location = new System.Drawing.Point(32, 416);
             this.ViewFSButton.Name = "ViewFSButton";
-            this.ViewFSButton.Size = new System.Drawing.Size(204, 34);
+            this.ViewFSButton.Size = new System.Drawing.Size(306, 52);
             this.ViewFSButton.TabIndex = 0;
             this.ViewFSButton.Text = "View Financials Statistics";
             this.ViewFSButton.UseVisualStyleBackColor = true;
@@ -168,9 +120,10 @@
             // CreatOffers
             // 
             this.CreatOffers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreatOffers.Location = new System.Drawing.Point(27, 349);
+            this.CreatOffers.Location = new System.Drawing.Point(32, 554);
+            this.CreatOffers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CreatOffers.Name = "CreatOffers";
-            this.CreatOffers.Size = new System.Drawing.Size(204, 34);
+            this.CreatOffers.Size = new System.Drawing.Size(306, 52);
             this.CreatOffers.TabIndex = 0;
             this.CreatOffers.Text = "Creat Offers";
             this.CreatOffers.UseVisualStyleBackColor = true;
@@ -179,10 +132,9 @@
             // ReciveInReButton
             // 
             this.ReciveInReButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReciveInReButton.Location = new System.Drawing.Point(18, 265);
-            this.ReciveInReButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReciveInReButton.Location = new System.Drawing.Point(32, 474);
             this.ReciveInReButton.Name = "ReciveInReButton";
-            this.ReciveInReButton.Size = new System.Drawing.Size(306, 71);
+            this.ReciveInReButton.Size = new System.Drawing.Size(306, 72);
             this.ReciveInReButton.TabIndex = 0;
             this.ReciveInReButton.Text = "View Service Feedback And Incedint Reports";
             this.ReciveInReButton.UseVisualStyleBackColor = true;
@@ -191,10 +143,9 @@
             // ViewCHistoriesButton
             // 
             this.ViewCHistoriesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ViewCHistoriesButton.Location = new System.Drawing.Point(18, 152);
-            this.ViewCHistoriesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewCHistoriesButton.Location = new System.Drawing.Point(32, 296);
             this.ViewCHistoriesButton.Name = "ViewCHistoriesButton";
-            this.ViewCHistoriesButton.Size = new System.Drawing.Size(204, 34);
+            this.ViewCHistoriesButton.Size = new System.Drawing.Size(306, 52);
             this.ViewCHistoriesButton.TabIndex = 3;
             this.ViewCHistoriesButton.Text = "View Customer\'s Histories";
             this.ViewCHistoriesButton.UseVisualStyleBackColor = true;
@@ -203,24 +154,33 @@
             // EditPInfo
             // 
             this.EditPInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditPInfo.Location = new System.Drawing.Point(27, 720);
+            this.EditPInfo.Location = new System.Drawing.Point(32, 616);
+            this.EditPInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EditPInfo.Name = "EditPInfo";
-            this.EditPInfo.Size = new System.Drawing.Size(306, 71);
+            this.EditPInfo.Size = new System.Drawing.Size(306, 60);
             this.EditPInfo.TabIndex = 0;
             this.EditPInfo.Text = "Edit Personal Informations";
             this.EditPInfo.UseVisualStyleBackColor = true;
             this.EditPInfo.Click += new System.EventHandler(this.EditPersonalInfoButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(32, 693);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(306, 50);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Manager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 577);
+            this.ClientSize = new System.Drawing.Size(1701, 924);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ViewCHistoriesButton);
-            this.Controls.Add(this.Emaillabel);
-            this.Controls.Add(this.RoleLabel);
-            this.Controls.Add(this.IDLabel);
-            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.HelloLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.EditPersonalInfoButton);
@@ -231,7 +191,6 @@
             this.Controls.Add(this.ViewFSButton);
             this.Controls.Add(this.ViewBHistoriesButton);
             this.Controls.Add(this.ManageSupplysReqButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Manager";
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.Manager_Load);
@@ -246,10 +205,6 @@
         private System.Windows.Forms.Button ManageEmployeesButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label HelloLabel;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label IDLabel;
-        private System.Windows.Forms.Label RoleLabel;
-        private System.Windows.Forms.Label Emaillabel;
         private System.Windows.Forms.Button EditPersonalInfoButton;
         private System.Windows.Forms.Button ViewBHistoriesButton;
         private System.Windows.Forms.Button ViewFSButton;
@@ -257,5 +212,6 @@
         private System.Windows.Forms.Button ReciveInReButton;
         private System.Windows.Forms.Button ViewCHistoriesButton;
         private System.Windows.Forms.Button EditPInfo;
+        private System.Windows.Forms.Button button1;
     }
 }

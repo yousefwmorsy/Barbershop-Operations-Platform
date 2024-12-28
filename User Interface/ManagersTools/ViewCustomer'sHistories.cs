@@ -30,5 +30,10 @@ namespace Barbershop_Operations_Platform.User_Interface.ManagersTools
         {
 
         }
+
+        private void ViewCustomer_sHistories_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

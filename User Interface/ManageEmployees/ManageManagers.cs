@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,6 +30,33 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             }
             else
             {
+                if (!(LNameBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                {
+                    MessageBox.Show("Names must contain only letters.");
+                    return;
+                }
+                if (!Regex.IsMatch(EmailBox.Text, @"^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                {
+                    MessageBox.Show("Enter Valid Email");
+                    return;
+                }
+                if (!(REPasswordBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                {
+                    MessageBox.Show("Password must contain only letters.");
+                    return;
+                }
+                if (!(PasswordBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                {
+                    MessageBox.Show("Re-Password must contain only letters.");
+                    return;
+                }
+                if (PasswordBox.Text != REPasswordBox.Text)
+                {
+                    MessageBox.Show("Password Doesn't Match");
+                    return;
+                }
+
+
                 int r = managerController.InsertManager(FNameBox.Text, LNameBox.Text, MID, PNumberBox.Text, AddressBox.Text, EmailBox.Text, PasswordBox.Text);
                 if (r != 0)
                 {
@@ -50,6 +78,7 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             }
             else
             {
+
                 int v = managerController.Delete(int.Parse(FIDBox.Text));
                 if (v != 0)
                 {
