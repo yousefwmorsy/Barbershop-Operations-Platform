@@ -192,7 +192,7 @@ namespace Barbershop_Operations_Platform
             string query = $"SELECT SupplyID FROM ServiceConsumes as s, Appointment as a WHERE s.ServiceID = a.ServiceID AND AppointmentID = {appid}";
             int supid = (int)dbMan.ExecuteScalar(query);
             string query2 = $"UPDATE Inventory SET Quantity -= {GetAmount(appid)} WHERE SupplyID = {supid}";
-            return dbMan.ExecuteNonQuery(query);
+            return dbMan.ExecuteNonQuery(query2);
         }
         public int MarkDone(int appid)
         {
