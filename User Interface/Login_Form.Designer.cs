@@ -41,60 +41,69 @@
             // 
             // PasswoedBox
             // 
-            this.PasswoedBox.Location = new System.Drawing.Point(151, 178);
+            this.PasswoedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswoedBox.Location = new System.Drawing.Point(155, 183);
             this.PasswoedBox.Name = "PasswoedBox";
-            this.PasswoedBox.Size = new System.Drawing.Size(304, 26);
+            this.PasswoedBox.PasswordChar = '*';
+            this.PasswoedBox.Size = new System.Drawing.Size(304, 30);
             this.PasswoedBox.TabIndex = 0;
             // 
             // Usernamebox
             // 
-            this.Usernamebox.Location = new System.Drawing.Point(151, 128);
+            this.Usernamebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usernamebox.Location = new System.Drawing.Point(155, 133);
             this.Usernamebox.Name = "Usernamebox";
-            this.Usernamebox.Size = new System.Drawing.Size(304, 26);
+            this.Usernamebox.Size = new System.Drawing.Size(304, 30);
             this.Usernamebox.TabIndex = 1;
             // 
             // lable2
             // 
             this.lable2.AutoSize = true;
-            this.lable2.Location = new System.Drawing.Point(60, 183);
+            this.lable2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable2.Location = new System.Drawing.Point(39, 183);
             this.lable2.Name = "lable2";
-            this.lable2.Size = new System.Drawing.Size(78, 20);
+            this.lable2.Size = new System.Drawing.Size(98, 25);
             this.lable2.TabIndex = 2;
             this.lable2.Text = "Password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 134);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(39, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Username";
             // 
             // Login
             // 
             this.Login.AutoSize = true;
-            this.Login.Location = new System.Drawing.Point(37, 49);
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login.Location = new System.Drawing.Point(42, 42);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(48, 20);
+            this.Login.Size = new System.Drawing.Size(118, 46);
             this.Login.TabIndex = 2;
             this.Login.Text = "Login";
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(64, 263);
+            this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginButton.Location = new System.Drawing.Point(44, 274);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(391, 44);
+            this.LoginButton.Size = new System.Drawing.Size(416, 44);
             this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 347);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(39, 347);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 20);
+            this.label1.Size = new System.Drawing.Size(255, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Don\'t have an account ? Signup";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -102,16 +111,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(60, 229);
+            this.label3.Location = new System.Drawing.Point(39, 229);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 20);
+            this.label3.Size = new System.Drawing.Size(274, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Wrong username or password";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(284, 335);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(300, 337);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 44);
             this.button1.TabIndex = 3;

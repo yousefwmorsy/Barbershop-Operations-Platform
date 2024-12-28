@@ -172,6 +172,41 @@
     <Compile Include="User Interface\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Interface\ManageEmployees\Controllers\MDaysOffController.cs" />
+    <Compile Include="User Interface\ManageEmployees\Controllers\MManagerController.cs" />
+    <Compile Include="User Interface\ManageEmployees\Controllers\MReceptionistController.cs" />
+    <Compile Include="User Interface\ManageEmployees\Controllers\SuppReqController.cs" />
+    <Compile Include="User Interface\ManageEmployees\ManageBarber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageBarber.Designer.cs">
+      <DependentUpon>ManageBarber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageDaysOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageDaysOff.Designer.cs">
+      <DependentUpon>ManageDaysOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageEmployees.Designer.cs">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageManagers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageManagers.Designer.cs">
+      <DependentUpon>ManageManagers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageReceptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\ManageReceptionist.Designer.cs">
+      <DependentUpon>ManageReceptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ManageEmployees\Controllers\MBarberController.cs" />
     <Compile Include="User Interface\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
