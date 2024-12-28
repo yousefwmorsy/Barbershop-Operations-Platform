@@ -37,36 +37,41 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(112, 36);
+            this.dateTimePicker1.CustomFormat = "yyyy/MM/dd-H:mm";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(466, 33);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(274, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(280, 26);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // method
             // 
             this.method.FormattingEnabled = true;
-            this.method.Location = new System.Drawing.Point(546, 36);
+            this.method.Location = new System.Drawing.Point(466, 209);
             this.method.Name = "method";
-            this.method.Size = new System.Drawing.Size(242, 28);
+            this.method.Size = new System.Drawing.Size(280, 28);
             this.method.TabIndex = 1;
             // 
             // service
             // 
             this.service.FormattingEnabled = true;
-            this.service.Location = new System.Drawing.Point(94, 133);
+            this.service.Location = new System.Drawing.Point(466, 280);
             this.service.Name = "service";
-            this.service.Size = new System.Drawing.Size(274, 28);
+            this.service.Size = new System.Drawing.Size(280, 28);
             this.service.TabIndex = 2;
             this.service.SelectedIndexChanged += new System.EventHandler(this.service_SelectedIndexChanged);
             this.service.ValueMemberChanged += new System.EventHandler(this.service_ValueMemberChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(524, 304);
+            this.button1.Location = new System.Drawing.Point(519, 371);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(184, 34);
             this.button1.TabIndex = 3;
@@ -77,7 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(520, 141);
+            this.label1.Location = new System.Drawing.Point(536, 333);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 20);
             this.label1.TabIndex = 4;
@@ -86,7 +91,7 @@
             // price_
             // 
             this.price_.AutoSize = true;
-            this.price_.Location = new System.Drawing.Point(657, 141);
+            this.price_.Location = new System.Drawing.Point(645, 333);
             this.price_.Name = "price_";
             this.price_.Size = new System.Drawing.Size(18, 20);
             this.price_.TabIndex = 5;
@@ -95,7 +100,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 39);
+            this.label3.Location = new System.Drawing.Point(339, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 6;
@@ -104,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(401, 39);
+            this.label4.Location = new System.Drawing.Point(298, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 7;
@@ -113,17 +118,36 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 141);
+            this.label5.Location = new System.Drawing.Point(368, 288);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "service";
+            // 
+            // time
+            // 
+            this.time.FormattingEnabled = true;
+            this.time.Location = new System.Drawing.Point(466, 117);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(280, 28);
+            this.time.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(298, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "select time";
             // 
             // reserve_appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -152,5 +176,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label price_;
+        private System.Windows.Forms.ComboBox time;
+        private System.Windows.Forms.Label label2;
     }
 }
