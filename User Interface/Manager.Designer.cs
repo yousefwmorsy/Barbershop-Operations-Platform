@@ -164,7 +164,7 @@
             this.CreatOffers.TabIndex = 0;
             this.CreatOffers.Text = "Creat Offers";
             this.CreatOffers.UseVisualStyleBackColor = true;
-            this.CreatOffers.Click += new System.EventHandler(this.ManageSupplysReqButton_Click);
+            this.CreatOffers.Click += new System.EventHandler(this.CreatOffers_Click);
             // 
             // ReciveInReButton
             // 
@@ -175,7 +175,7 @@
             this.ReciveInReButton.TabIndex = 0;
             this.ReciveInReButton.Text = "View Service Feedback And Incedint Reports";
             this.ReciveInReButton.UseVisualStyleBackColor = true;
-            this.ReciveInReButton.Click += new System.EventHandler(this.ManageSupplysReqButton_Click);
+            this.ReciveInReButton.Click += new System.EventHandler(this.ReciveInReButton_Click);
             // 
             // ViewCHistoriesButton
             // 

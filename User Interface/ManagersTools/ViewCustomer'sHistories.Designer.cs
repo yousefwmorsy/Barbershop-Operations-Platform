@@ -39,31 +39,33 @@
             // ViewButton
             // 
             this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ViewButton.Location = new System.Drawing.Point(567, 27);
+            this.ViewButton.Location = new System.Drawing.Point(12, 401);
             this.ViewButton.Name = "ViewButton";
             this.ViewButton.Size = new System.Drawing.Size(519, 57);
             this.ViewButton.TabIndex = 6;
             this.ViewButton.Text = "View Selected Customer";
             this.ViewButton.UseVisualStyleBackColor = true;
+            this.ViewButton.Click += new System.EventHandler(this.ViewButton_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(567, 90);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 464);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(519, 311);
+            this.dataGridView2.Size = new System.Drawing.Size(770, 311);
             this.dataGridView2.TabIndex = 4;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(128, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(165, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(433, 374);
+            this.dataGridView1.Size = new System.Drawing.Size(617, 374);
             this.dataGridView1.TabIndex = 5;
             // 
             // label1
@@ -79,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 692);
+            this.ClientSize = new System.Drawing.Size(810, 817);
             this.Controls.Add(this.ViewButton);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
