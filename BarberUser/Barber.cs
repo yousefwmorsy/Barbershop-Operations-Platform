@@ -26,7 +26,6 @@ namespace Barbershop_Operations_Platform
             BarberMainPanel = panel1;
             currentClickedButton = info_button;
             currentClickedButton.Enabled = false;
-            MessageBox.Show(barber_id.ToString());
         }
 
         private void Barber_Load(object sender, EventArgs e)
