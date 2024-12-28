@@ -23,7 +23,7 @@ namespace Barbershop_Operations_Platform.BarberUser
             barberID = barberid;
             incident_text.MaxLength = 300;
 
-            DataTable dt = controllerobject.GetAppointmentsWithoutIncidents(barberID);
+            DataTable dt = controllerobject.GetDoneAppointments(barberID);
             if (dt == null)
             {
                 emptyDataGrid_label.Visible = true;
@@ -57,6 +57,19 @@ namespace Barbershop_Operations_Platform.BarberUser
             {
                 MessageBox.Show("Can't Enter Special Characters");
                 return;
+            }
+
+            string appid = comboBox1.SelectedValue.ToString();
+            string text = incident_text.Text.ToString();
+            MessageBox.Show(appid);
+            if (controllerobject.UpdateAppointmentIncident(appid, text) > 0)
+            {
+                dataGridView1.DataSource = controllerobject.GetDoneAppointments(barberID);
+                MessageBox.Show("Updated Report Successfuly");
+            }
+            else
+            {
+                MessageBox.Show("Couldn't Update Report");
             }
 
         }

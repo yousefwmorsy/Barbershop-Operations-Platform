@@ -146,14 +146,22 @@ namespace Barbershop_Operations_Platform
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public DataTable GetAppointmentsWithoutIncidents(int barberid)
+        public DataTable GetDoneAppointments(int barberid)
         {
-            string query = $"SELECT a.AppointmentID AS 'Appointment Number', CONCAT(c.FName, ' ', c.LName) AS 'Customer Name', s.service_name AS 'Service Name', a.AppointmentTime AS 'Time', a.IncidentReport As 'Incident Report' " +
+            string query =  $"SELECT a.AppointmentID AS 'Appointment Number', CONCAT(c.FName, ' ', c.LName) AS 'Customer Name', " +
+                            $"s.service_name AS 'Service Name', a.AppointmentTime AS 'Time', a.IncidentReport As 'Incident Report' " +
                 $"FROM Appointment a " +
                 $"JOIN Customer c ON a.CustomerID = c.CustID " +
-                $"JOIN Service s ON s.service_id = a.AppointmentID " +
+                $"JOIN Service s ON s.service_id = a.ServiceID " +
                 $"WHERE BarberID = {barberid} AND a.Status = 'Done';";
             return dbMan.ExecuteReader(query);
+        }
+        public int UpdateAppointmentIncident(string appid, string text)
+        {
+            string query = $"Update Appointment " +
+                $"Set IncidentReport = '{text}' " +
+                $"Where AppointmentID = {appid};";
+            return dbMan.ExecuteNonQuery(query);
         }
         public void TerminateConnection()
         {
