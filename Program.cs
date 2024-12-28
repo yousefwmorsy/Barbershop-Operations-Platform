@@ -17,7 +17,8 @@ namespace Barbershop_Operations_Platform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            Application.Run(new Customer(13));
+            Application.Run(new Receptionest(new Login_Form(), 63));
         }
     }
 }

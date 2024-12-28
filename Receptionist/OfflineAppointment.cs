@@ -41,6 +41,11 @@ namespace Barbershop_Operations_Platform.Receptionist
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select!");
+                return;
+            }
             if (textBox1.Text.Length == 0)
             {
                 MessageBox.Show("Please enter name");

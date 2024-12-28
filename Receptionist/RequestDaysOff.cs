@@ -26,6 +26,7 @@ namespace Barbershop_Operations_Platform.Receptionist
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string startTime = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string endTime = dateTimePicker2.Value.ToString("yyyy-MM-dd");
             if (dateTimePicker1.Value > dateTimePicker2.Value)

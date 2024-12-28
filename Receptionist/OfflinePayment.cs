@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Barbershop_Operations_Platform.Receptionist
 {
@@ -38,7 +39,12 @@ namespace Barbershop_Operations_Platform.Receptionist
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(controllerObj.CustPaid(id, (int)comboBox1.SelectedValue) != 0)
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select!");
+                return;
+            }
+            if (controllerObj.CustPaid(id, (int)comboBox1.SelectedValue) != 0)
             {
                 MessageBox.Show("Successfull!");
                 DataTable dt = controllerObj.GetOfflinePayments();

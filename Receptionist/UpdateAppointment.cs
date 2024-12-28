@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Barbershop_Operations_Platform.Receptionist
 {
@@ -23,7 +24,6 @@ namespace Barbershop_Operations_Platform.Receptionist
             if (comb == null) return;
             DataTable dt = comb.Copy();
             comb.Columns.Add("DisplayName", typeof(string), "ID + ' - ' + Customer");
-            dt.Columns.Remove("ID");
 
             dataGridView1.DataSource = dt;
             comboBox1.DataSource = comb;
@@ -38,6 +38,11 @@ namespace Barbershop_Operations_Platform.Receptionist
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select!");
+                return;
+            }
             if (radioButton1.Checked) {
                 if (controllerObj.Delete((int)comboBox1.SelectedValue) != 0)
                 {
@@ -66,7 +71,6 @@ namespace Barbershop_Operations_Platform.Receptionist
             if (comb == null) return;
             DataTable dt = comb.Copy();
             comb.Columns.Add("DisplayName", typeof(string), "ID + ' - ' + Customer");
-            dt.Columns.Remove("ID");
 
             dataGridView1.DataSource = dt;
             comboBox1.DataSource = comb;

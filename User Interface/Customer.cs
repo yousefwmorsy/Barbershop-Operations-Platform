@@ -41,7 +41,7 @@ namespace Barbershop_Operations_Platform
 
         private void reserve_Click(object sender, EventArgs e)
         {
-            reserve_appointment reserve = new reserve_appointment(5);
+            reserve_appointment reserve = new reserve_appointment(ID);
             reserve.ShowDialog();
 
         }

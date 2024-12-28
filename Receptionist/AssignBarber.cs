@@ -51,6 +51,12 @@ namespace Barbershop_Operations_Platform.Receptionist
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1) 
+            {
+                MessageBox.Show("Please select!");
+                return;
+            }
+            
             if (controllerObj.CheckBarberFree((int)comboBox2.SelectedValue, (int)comboBox1.SelectedValue) == 0)
             {
                 TimeSpan start = controllerObj.GetBarberStart((int)comboBox2.SelectedValue);
@@ -66,14 +72,28 @@ namespace Barbershop_Operations_Platform.Receptionist
                     if (controllerObj.AssignBarber((int)comboBox2.SelectedValue, (int)comboBox1.SelectedValue)!=0)
                     {
                         MessageBox.Show("Assignment Successful");
+                        if (controllerObj.ViewTodayUnassignedAppointments() == null || controllerObj.ViewAvailableBarbers() == null) return;
+
                         DataTable dt = controllerObj.ViewTodayUnassignedAppointments();
                         dataGridView1.DataSource = dt;
-                        dataGridView1.Refresh();
+
                         DataTable comb2 = controllerObj.ViewAvailableBarbers();
                         DataTable dt2 = comb2.Copy();
                         dt2.Columns.Remove("BarberID");
                         dataGridView2.DataSource = dt2;
-                        dataGridView2.Refresh();
+
+
+
+                        DataTable comb = dt.Copy();
+                        comb.Columns.Add("DisplayName", typeof(string), "ID + ' - ' + Service");
+
+                        comboBox1.DataSource = comb;
+                        comboBox1.ValueMember = "ID";
+                        comboBox1.DisplayMember = "DisplayName";
+
+                        comboBox2.DataSource = comb2;
+                        comboBox2.ValueMember = "BarberID";
+                        comboBox2.DisplayMember = "Barber";
                     }
                     else
                     {
