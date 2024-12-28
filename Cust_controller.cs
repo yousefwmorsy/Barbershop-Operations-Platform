@@ -32,29 +32,33 @@ namespace Barbershop_Operations_Platform
         }
         public int add_customer(string firstname, string lastname, string BDate, string phone, string email, string password)
         {
+            //string query = "INSERT INTO customer (Fname, Lname, BDate, phone_number, Email, Password) " +
+            //                  "VALUES (@Fname, @Lname, @BDate, @phone_number, @Email, @Password);";
+
+            //using (SqlConnection connection = new SqlConnection(dbMan.GetConnectionString() + ";Column Encryption Setting=Enabled;"))
+            //using (SqlCommand command = new SqlCommand(query, connection))
+            //{
+
+            //    command.Parameters.Add("@Fname", SqlDbType.VarChar, 50).Value = firstname;
+            //    command.Parameters.Add("@Lname", SqlDbType.VarChar, 50).Value = lastname;
+            //    command.Parameters.Add("@BDate", SqlDbType.VarChar, 20).Value = BDate;
+            //    command.Parameters.Add("@phone_number", SqlDbType.VarChar, 20).Value = phone;
+            //    command.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = email;
+
+            //    //el encrypted 
+            //    SqlParameter passwordParameter = new SqlParameter("@Password", SqlDbType.VarChar, 50);
+            //    passwordParameter.Value = password;
+            //    command.Parameters.Add(passwordParameter);
+
+
+            //    connection.Open();
+            //    return command.ExecuteNonQuery();
+
+            //}
+
             string query = "INSERT INTO customer (Fname, Lname, BDate, phone_number, Email, Password) " +
-                              "VALUES (@Fname, @Lname, @BDate, @phone_number, @Email, @Password);";
-
-            using (SqlConnection connection = new SqlConnection(dbMan.GetConnectionString() + ";Column Encryption Setting=Enabled;"))
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-
-                command.Parameters.Add("@Fname", SqlDbType.VarChar, 50).Value = firstname;
-                command.Parameters.Add("@Lname", SqlDbType.VarChar, 50).Value = lastname;
-                command.Parameters.Add("@BDate", SqlDbType.VarChar, 20).Value = BDate;
-                command.Parameters.Add("@phone_number", SqlDbType.VarChar, 20).Value = phone;
-                command.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = email;
-
-                //el encrypted 
-                SqlParameter passwordParameter = new SqlParameter("@Password", SqlDbType.VarChar, 50);
-                passwordParameter.Value = password;
-                command.Parameters.Add(passwordParameter);
-
-
-                connection.Open();
-                return command.ExecuteNonQuery();
-
-            }
+                          "VALUES ('" + firstname + "', '" + lastname + "', '" + BDate + "', '" + phone + "', '" + email + "', '" + password + "');";
+            return dbMan.ExecuteNonQuery(query);
         }
         public int getpoints(int id)
         {
@@ -63,20 +67,20 @@ namespace Barbershop_Operations_Platform
         }
         public int update_cust_info(int ID, string attribute, string value)
         {
-            if (attribute == "password")
-            {
+            //if (attribute == "password")
+            //{
 
-                string passwordquery = $"UPDATE customer SET password = @NewPassword WHERE {ID} = CustID";
-                using (SqlConnection connection = new SqlConnection(dbMan.GetConnectionString() + ";Column Encryption Setting=Enabled;"))
-                using (SqlCommand command = new SqlCommand(passwordquery, connection))
-                {
-                    SqlParameter passwordParameter = new SqlParameter("@NewPassword", SqlDbType.VarChar, 50);
-                    passwordParameter.Value = value;
-                    command.Parameters.Add(passwordParameter);
-                    connection.Open();
-                    return command.ExecuteNonQuery();
-                }
-            }
+            //    string passwordquery = $"UPDATE customer SET password = @NewPassword WHERE {ID} = CustID";
+            //    using (SqlConnection connection = new SqlConnection(dbMan.GetConnectionString() + ";Column Encryption Setting=Enabled;"))
+            //    using (SqlCommand command = new SqlCommand(passwordquery, connection))
+            //    {
+            //        SqlParameter passwordParameter = new SqlParameter("@NewPassword", SqlDbType.VarChar, 50);
+            //        passwordParameter.Value = value;
+            //        command.Parameters.Add(passwordParameter);
+            //        connection.Open();
+            //        return command.ExecuteNonQuery();
+            //    }
+            //}
             string query = $"UPDATE customer SET {attribute} = '{value}' WHERE {ID} = CustID";
             return dbMan.ExecuteNonQuery(query);
         }
