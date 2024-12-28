@@ -83,6 +83,12 @@
     <Compile Include="Receptionist\RequestDaysOff.Designer.cs">
       <DependentUpon>RequestDaysOff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Receptionist\UpdateAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\UpdateAppointment.Designer.cs">
+      <DependentUpon>UpdateAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Receptionist\ViewAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receptionist\RequestDaysOff.resx">
       <DependentUpon>RequestDaysOff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\UpdateAppointment.resx">
+      <DependentUpon>UpdateAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receptionist\ViewAppointments.resx">
       <DependentUpon>ViewAppointments.cs</DependentUpon>

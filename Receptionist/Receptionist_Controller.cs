@@ -94,7 +94,13 @@ namespace Barbershop_Operations_Platform
 
         public DataTable ViewAllAppointments()
         {
-            string query = $"SELECT CONCAT(c.FName, ' ', c.LName) as 'Customer', service_name as 'Service', CONVERT(VARCHAR(16), AppointmentTime, 120) AS Time, Status\r\n FROM [dbo].[Appointment] as a, [dbo].[Customer] as c, [dbo].[Service] WHERE a.CustomerID = c.CustID AND a.ServiceID = Service.service_id AND AppointmentTime >= '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}'";
+            string query = $"SELECT \r\n    CASE \r\n        WHEN a.CustomerID = 12 THEN pa.CustName\r\n        ELSE CONCAT(c.FName, ' ', c.LName)\r\n    END AS 'Customer',\r\n    s.service_name AS 'Service',\r\n    CONVERT(VARCHAR(16), a.AppointmentTime, 120) AS 'Time',\r\n    a.Status\r\nFROM \r\n    [dbo].[Appointment] AS a\r\nLEFT JOIN \r\n    [dbo].[Customer] AS c ON a.CustomerID = c.CustID\r\nLEFT JOIN \r\n    [dbo].[Service] AS s ON a.ServiceID = s.service_id\r\nLEFT JOIN \r\n    [dbo].[PhoneAppointment] AS pa ON a.AppointmentID = pa.AppID\r\nWHERE \r\n    a.AppointmentTime >= '{DateTime.Now.ToString("yyyy-MM-dd") + " " + "00:00:00"}'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable ViewAllAppointmentsID()
+        {
+            string query = $"SELECT \r\n    a.AppointmentID as ID, CASE \r\n        WHEN a.CustomerID = 12 THEN pa.CustName\r\n        ELSE CONCAT(c.FName, ' ', c.LName)\r\n    END AS 'Customer',\r\n    s.service_name AS 'Service',\r\n    CONVERT(VARCHAR(16), a.AppointmentTime, 120) AS 'Time',\r\n    a.Status\r\nFROM \r\n    [dbo].[Appointment] AS a\r\nLEFT JOIN \r\n    [dbo].[Customer] AS c ON a.CustomerID = c.CustID\r\nLEFT JOIN \r\n    [dbo].[Service] AS s ON a.ServiceID = s.service_id\r\nLEFT JOIN \r\n    [dbo].[PhoneAppointment] AS pa ON a.AppointmentID = pa.AppID\r\nWHERE \r\n    a.AppointmentTime >= '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' AND a.Status != 'Done'";
             return dbMan.ExecuteReader(query);
         }
 
@@ -163,6 +169,17 @@ namespace Barbershop_Operations_Platform
             return q1+dbMan.ExecuteNonQuery(query2);
         }
 
+        public int MarkDone(int appid)
+        {
+            string query = $"UPDATE Appointment SET Status = 'Done' WHERE AppointmentID = {appid}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int Delete(int appid)
+        {
+            string query = $"DELETE FROM Appointment WHERE AppointmentID = {appid}";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public void TerminateConnection()
         {

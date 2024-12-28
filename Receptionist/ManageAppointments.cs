@@ -72,6 +72,12 @@ namespace Barbershop_Operations_Platform.Receptionist
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            UpdateAppointment app = new UpdateAppointment(id, controllerObj);
+            app.Dock = DockStyle.Fill;
+            app.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(app);
+            app.Show();
             button1.Enabled = true;
             button2.Enabled = false;
             button3.Enabled = true;
