@@ -156,11 +156,17 @@ namespace Barbershop_Operations_Platform.BarberUser
             {
                 retypePassword_label.Visible = true;
                 retypePassword_text.Visible = true;
+                
+                update_text.PasswordChar = '*';
+                retypePassword_text.PasswordChar = '*';
             }
             else
             {
                 retypePassword_label.Visible = false;
                 retypePassword_text.Visible = false;
+
+                update_text.PasswordChar = '\0';
+                retypePassword_text.PasswordChar = '\0';
             }
         }
     }
