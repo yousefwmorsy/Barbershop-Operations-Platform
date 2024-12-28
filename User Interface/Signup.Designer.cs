@@ -54,13 +54,15 @@
             this.Firstnamelabel.Size = new System.Drawing.Size(106, 25);
             this.Firstnamelabel.TabIndex = 0;
             this.Firstnamelabel.Text = "First Name";
+            this.Firstnamelabel.Click += new System.EventHandler(this.Firstnamelabel_Click);
             // 
             // LastNamelabel
             // 
             this.LastNamelabel.AutoSize = true;
+            this.LastNamelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastNamelabel.Location = new System.Drawing.Point(57, 130);
             this.LastNamelabel.Name = "LastNamelabel";
-            this.LastNamelabel.Size = new System.Drawing.Size(86, 20);
+            this.LastNamelabel.Size = new System.Drawing.Size(95, 20);
             this.LastNamelabel.TabIndex = 0;
             this.LastNamelabel.Text = "Last Name";
             // 
@@ -94,9 +96,10 @@
             // Passwordlabel
             // 
             this.Passwordlabel.AutoSize = true;
+            this.Passwordlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Passwordlabel.Location = new System.Drawing.Point(57, 198);
             this.Passwordlabel.Name = "Passwordlabel";
-            this.Passwordlabel.Size = new System.Drawing.Size(113, 20);
+            this.Passwordlabel.Size = new System.Drawing.Size(125, 20);
             this.Passwordlabel.TabIndex = 0;
             this.Passwordlabel.Text = "New Password";
             // 
@@ -141,6 +144,7 @@
             // 
             this.NPassBox.Location = new System.Drawing.Point(224, 195);
             this.NPassBox.Name = "NPassBox";
+            this.NPassBox.PasswordChar = '*';
             this.NPassBox.Size = new System.Drawing.Size(192, 26);
             this.NPassBox.TabIndex = 1;
             // 
@@ -148,6 +152,7 @@
             // 
             this.REENPassBox.Location = new System.Drawing.Point(224, 264);
             this.REENPassBox.Name = "REENPassBox";
+            this.REENPassBox.PasswordChar = '*';
             this.REENPassBox.Size = new System.Drawing.Size(192, 26);
             this.REENPassBox.TabIndex = 1;
             // 

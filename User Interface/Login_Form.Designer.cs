@@ -105,7 +105,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Don\'t have an email, Signup";
+            this.label1.Text = "Don\'t have an account ? Signup";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -144,8 +145,7 @@
             this.Controls.Add(this.Usernamebox);
             this.Controls.Add(this.PasswoedBox);
             this.Name = "Login_Form";
-            this.Text = "Login Form";
-            this.Load += new System.EventHandler(this.Login_Form_Load);
+           this.Text = "Login Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 

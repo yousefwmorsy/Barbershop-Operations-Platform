@@ -19,10 +19,7 @@ namespace Barbershop_Operations_Platform
             label3.Hide();
         }
 
-        private void Login_Form_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
