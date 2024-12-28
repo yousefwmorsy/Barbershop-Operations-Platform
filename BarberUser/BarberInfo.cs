@@ -22,7 +22,7 @@ namespace Barbershop_Operations_Platform.BarberUser
             barberID = barberid;
             UpdateInfo();
 
-            updateInfo_combo.DataSource = new string[] {"First Name", "Last Name", "Phone Number", "Address", "Email"};
+            updateInfo_combo.DataSource = new string[] {"First Name", "Last Name", "Phone Number", "Address", "Email", "Password"};
         }
         
         public void UpdateInfo()
@@ -115,6 +115,25 @@ namespace Barbershop_Operations_Platform.BarberUser
                     }
                     break;
 
+                case "Password":
+                    selected = "Password";
+                    string passwordPattern = @"[^a-zA-Z0-9!@#$%^&*]";
+                    if (text.Length < 8)
+                    {
+                        MessageBox.Show("Password Length Must be Longer than 8 chars");
+                        return;
+                    }
+                    if (retypePassword_text.Text.ToString() != text)
+                    {
+                        MessageBox.Show("Password Mismatch");
+                        return;
+                    }
+                    if (Regex.IsMatch(text, passwordPattern))
+                    {
+                        MessageBox.Show("Donot Enter Special Characters");
+                        return;
+                    }
+                    break;
                 default:
                     return;
             }
@@ -128,6 +147,20 @@ namespace Barbershop_Operations_Platform.BarberUser
             else
             {
                 MessageBox.Show("Couldn't Update");
+            }
+        }
+
+        private void updateInfo_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (updateInfo_combo.SelectedValue.ToString() == "Password")
+            {
+                retypePassword_label.Visible = true;
+                retypePassword_text.Visible = true;
+            }
+            else
+            {
+                retypePassword_label.Visible = false;
+                retypePassword_text.Visible = false;
             }
         }
     }

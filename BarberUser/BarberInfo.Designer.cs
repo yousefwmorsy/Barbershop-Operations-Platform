@@ -51,6 +51,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.update_button = new System.Windows.Forms.Button();
+            this.retypePassword_text = new System.Windows.Forms.TextBox();
+            this.retypePassword_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -218,14 +220,15 @@
             // updateInfo_combo
             // 
             this.updateInfo_combo.FormattingEnabled = true;
-            this.updateInfo_combo.Location = new System.Drawing.Point(423, 50);
+            this.updateInfo_combo.Location = new System.Drawing.Point(508, 45);
             this.updateInfo_combo.Name = "updateInfo_combo";
             this.updateInfo_combo.Size = new System.Drawing.Size(135, 21);
             this.updateInfo_combo.TabIndex = 18;
+            this.updateInfo_combo.SelectedIndexChanged += new System.EventHandler(this.updateInfo_combo_SelectedIndexChanged);
             // 
             // update_text
             // 
-            this.update_text.Location = new System.Drawing.Point(423, 83);
+            this.update_text.Location = new System.Drawing.Point(508, 78);
             this.update_text.Name = "update_text";
             this.update_text.Size = new System.Drawing.Size(160, 20);
             this.update_text.TabIndex = 19;
@@ -233,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(375, 53);
+            this.label9.Location = new System.Drawing.Point(383, 48);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 13);
             this.label9.TabIndex = 21;
@@ -242,7 +245,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(375, 86);
+            this.label11.Location = new System.Drawing.Point(383, 81);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 13);
             this.label11.TabIndex = 22;
@@ -250,7 +253,7 @@
             // 
             // update_button
             // 
-            this.update_button.Location = new System.Drawing.Point(424, 129);
+            this.update_button.Location = new System.Drawing.Point(424, 165);
             this.update_button.Name = "update_button";
             this.update_button.Size = new System.Drawing.Size(134, 49);
             this.update_button.TabIndex = 25;
@@ -258,11 +261,29 @@
             this.update_button.UseVisualStyleBackColor = true;
             this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
+            // retypePassword_text
+            // 
+            this.retypePassword_text.Location = new System.Drawing.Point(509, 110);
+            this.retypePassword_text.Name = "retypePassword_text";
+            this.retypePassword_text.Size = new System.Drawing.Size(160, 20);
+            this.retypePassword_text.TabIndex = 26;
+            // 
+            // retypePassword_label
+            // 
+            this.retypePassword_label.AutoSize = true;
+            this.retypePassword_label.Location = new System.Drawing.Point(383, 113);
+            this.retypePassword_label.Name = "retypePassword_label";
+            this.retypePassword_label.Size = new System.Drawing.Size(94, 13);
+            this.retypePassword_label.TabIndex = 27;
+            this.retypePassword_label.Text = "ReType Password";
+            // 
             // BarberInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.retypePassword_label);
+            this.Controls.Add(this.retypePassword_text);
             this.Controls.Add(this.update_button);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
@@ -320,5 +341,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button update_button;
+        private System.Windows.Forms.TextBox retypePassword_text;
+        private System.Windows.Forms.Label retypePassword_label;
     }
 }

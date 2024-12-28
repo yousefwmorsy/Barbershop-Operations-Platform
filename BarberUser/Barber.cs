@@ -105,5 +105,17 @@ namespace Barbershop_Operations_Platform
             currentClickedButton = incident_button;
             currentClickedButton.Enabled = false;
         }
+
+        private void logOut_button_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (ctrl is Form)
+                {
+                    ((Form)ctrl).Close();
+                }
+            }
+            this.Close();
+        }
     }
 }

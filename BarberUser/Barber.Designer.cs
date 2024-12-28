@@ -35,13 +35,14 @@
             this.info_button = new System.Windows.Forms.Button();
             this.incident_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.logOut_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // schedule_button
             // 
             this.schedule_button.Location = new System.Drawing.Point(12, 84);
             this.schedule_button.Name = "schedule_button";
-            this.schedule_button.Size = new System.Drawing.Size(112, 67);
+            this.schedule_button.Size = new System.Drawing.Size(112, 56);
             this.schedule_button.TabIndex = 0;
             this.schedule_button.Text = "View Schedule";
             this.schedule_button.UseVisualStyleBackColor = true;
@@ -49,9 +50,9 @@
             // 
             // requestDaysOff_button
             // 
-            this.requestDaysOff_button.Location = new System.Drawing.Point(12, 154);
+            this.requestDaysOff_button.Location = new System.Drawing.Point(12, 146);
             this.requestDaysOff_button.Name = "requestDaysOff_button";
-            this.requestDaysOff_button.Size = new System.Drawing.Size(112, 66);
+            this.requestDaysOff_button.Size = new System.Drawing.Size(112, 55);
             this.requestDaysOff_button.TabIndex = 1;
             this.requestDaysOff_button.Text = "Request Days off";
             this.requestDaysOff_button.UseVisualStyleBackColor = true;
@@ -59,9 +60,9 @@
             // 
             // attendence_button
             // 
-            this.attendence_button.Location = new System.Drawing.Point(12, 299);
+            this.attendence_button.Location = new System.Drawing.Point(12, 269);
             this.attendence_button.Name = "attendence_button";
-            this.attendence_button.Size = new System.Drawing.Size(112, 66);
+            this.attendence_button.Size = new System.Drawing.Size(112, 55);
             this.attendence_button.TabIndex = 3;
             this.attendence_button.Text = "Log Attendence";
             this.attendence_button.UseVisualStyleBackColor = true;
@@ -69,9 +70,9 @@
             // 
             // reqSupplies_button
             // 
-            this.reqSupplies_button.Location = new System.Drawing.Point(12, 226);
+            this.reqSupplies_button.Location = new System.Drawing.Point(12, 207);
             this.reqSupplies_button.Name = "reqSupplies_button";
-            this.reqSupplies_button.Size = new System.Drawing.Size(112, 67);
+            this.reqSupplies_button.Size = new System.Drawing.Size(112, 56);
             this.reqSupplies_button.TabIndex = 2;
             this.reqSupplies_button.Text = "Request Supplies";
             this.reqSupplies_button.UseVisualStyleBackColor = true;
@@ -79,9 +80,9 @@
             // 
             // info_button
             // 
-            this.info_button.Location = new System.Drawing.Point(12, 12);
+            this.info_button.Location = new System.Drawing.Point(12, 23);
             this.info_button.Name = "info_button";
-            this.info_button.Size = new System.Drawing.Size(112, 66);
+            this.info_button.Size = new System.Drawing.Size(112, 55);
             this.info_button.TabIndex = 5;
             this.info_button.Text = "Personal Info";
             this.info_button.UseVisualStyleBackColor = true;
@@ -89,9 +90,9 @@
             // 
             // incident_button
             // 
-            this.incident_button.Location = new System.Drawing.Point(12, 371);
+            this.incident_button.Location = new System.Drawing.Point(12, 330);
             this.incident_button.Name = "incident_button";
-            this.incident_button.Size = new System.Drawing.Size(112, 67);
+            this.incident_button.Size = new System.Drawing.Size(112, 56);
             this.incident_button.TabIndex = 4;
             this.incident_button.Text = "Submit Incident Report";
             this.incident_button.UseVisualStyleBackColor = true;
@@ -104,11 +105,22 @@
             this.panel1.Size = new System.Drawing.Size(767, 426);
             this.panel1.TabIndex = 6;
             // 
+            // logOut_button
+            // 
+            this.logOut_button.Location = new System.Drawing.Point(12, 392);
+            this.logOut_button.Name = "logOut_button";
+            this.logOut_button.Size = new System.Drawing.Size(112, 46);
+            this.logOut_button.TabIndex = 7;
+            this.logOut_button.Text = "Log Out";
+            this.logOut_button.UseVisualStyleBackColor = true;
+            this.logOut_button.Click += new System.EventHandler(this.logOut_button_Click);
+            // 
             // Barber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 450);
+            this.Controls.Add(this.logOut_button);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.info_button);
             this.Controls.Add(this.incident_button);
@@ -132,5 +144,6 @@
         private System.Windows.Forms.Button info_button;
         private System.Windows.Forms.Button incident_button;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button logOut_button;
     }
 }
