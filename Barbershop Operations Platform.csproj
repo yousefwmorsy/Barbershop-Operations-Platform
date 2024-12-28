@@ -115,6 +115,12 @@
     <Compile Include="User Interface\ManagersTools\CreatOffera.Designer.cs">
       <DependentUpon>CreatOffera.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Interface\ManagersTools\EditPersonalInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\ManagersTools\EditPersonalInfo.Designer.cs">
+      <DependentUpon>EditPersonalInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\ManagersTools\ManagerClassController.cs" />
     <Compile Include="User Interface\ManagersTools\ViewBarber%27sHistrory.cs">
       <SubType>Form</SubType>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Interface\ManagersTools\CreatOffera.resx">
       <DependentUpon>CreatOffera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ManagersTools\EditPersonalInfo.resx">
+      <DependentUpon>EditPersonalInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Interface\ManagersTools\ViewBarber%27sHistrory.resx">
       <DependentUpon>ViewBarber%27sHistrory.cs</DependentUpon>

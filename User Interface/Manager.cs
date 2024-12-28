@@ -106,5 +106,15 @@ namespace Barbershop_Operations_Platform
             panel1.Controls.Add(F);
             F.Show();
         }
+
+        private void EditPersonalInfoButton_Click(object sender, EventArgs e)
+        {
+            Form F = new EditPersonalInfo();
+            F.Dock = DockStyle.Fill;
+            F.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(F);
+            F.Show();
+        }
     }
 }
