@@ -42,7 +42,7 @@ namespace Barbershop_Operations_Platform.User_Interface.ManagersTools
 
         public DataTable GetCustomersHistory(int CID)
         {
-            string Query = "SELECT CONCAT(C.FName, ' ' ,C.FName) AS BName , S.service_name AS Service_Name," +
+            string Query = "SELECT CONCAT(C.FName, ' ' ,C.LName) AS BName , S.service_name AS Service_Name," +
                 " P.Payment_method AS Payment_Method, P.Amount AS Amount" +
                 " FROM Customer AS C, Appointment AS A, Payment_Transaction AS P, Service AS S " +
                 $" WHERE C.CustID = {CID} AND A.CustomerID = C.CustID AND A.ServiceID = S.service_id AND A.PaymentID = P.payment_id;";

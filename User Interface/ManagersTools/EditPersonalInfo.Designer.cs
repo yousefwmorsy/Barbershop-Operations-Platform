@@ -39,7 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.PasswordBox = new System.Windows.Forms.TextBox();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.RePassword = new System.Windows.Forms.TextBox();
@@ -146,13 +146,42 @@
             this.Password.TabIndex = 6;
             this.Password.Text = "New Password";
             // 
-            // textBox5
+            // PasswordBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox5.Location = new System.Drawing.Point(607, 261);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(254, 30);
-            this.textBox5.TabIndex = 7;
+            this.PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.PasswordBox.Location = new System.Drawing.Point(607, 261);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.Size = new System.Drawing.Size(254, 30);
+            this.PasswordBox.TabIndex = 7;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.UpdateButton.Location = new System.Drawing.Point(447, 370);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(415, 57);
+            this.UpdateButton.TabIndex = 8;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(442, 322);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 25);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Re-Password";
+            // 
+            // RePassword
+            // 
+            this.RePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.RePassword.Location = new System.Drawing.Point(607, 320);
+            this.RePassword.Name = "RePassword";
+            this.RePassword.Size = new System.Drawing.Size(254, 30);
+            this.RePassword.TabIndex = 7;
             // 
             // UpdateButton
             // 
@@ -191,7 +220,7 @@
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.RePassword);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.AddressBox);
             this.Controls.Add(this.EmailBox);
@@ -226,7 +255,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox EmailBox;
         private System.Windows.Forms.Label Password;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox PasswordBox;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox RePassword;

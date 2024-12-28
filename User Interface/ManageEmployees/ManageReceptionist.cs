@@ -35,29 +35,19 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
             }
             else
             {
-                if (!(LNameBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                if (!FNameBox.Text.All(char.IsLetter))
                 {
-                    MessageBox.Show("Names must contain only letters.");
+                    MessageBox.Show("First Name is not valid");
                     return;
                 }
-                if (!Regex.IsMatch(EmailBox.Text, @"^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                if (!LNameBox.Text.All(char.IsLetter))
                 {
-                    MessageBox.Show("Enter Valid Email");
-                    return;
-                }
-                if (!(REPasswordBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
-                {
-                    MessageBox.Show("Password must contain only letters.");
-                    return;
-                }
-                if (!(PasswordBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
-                {
-                    MessageBox.Show("Re-Password must contain only letters.");
+                    MessageBox.Show("Last Name is not valid");
                     return;
                 }
                 if (PasswordBox.Text != REPasswordBox.Text)
                 {
-                    MessageBox.Show("Password Doesn't Match");
+                    MessageBox.Show("Password Is not Matched");
                     return;
                 }
 
@@ -70,6 +60,11 @@ namespace Barbershop_Operations_Platform.User_Interface.ManageEmployees
         }
 
         private void FireReceptionistButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FireBurberButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(FIDBox.Text))
             {

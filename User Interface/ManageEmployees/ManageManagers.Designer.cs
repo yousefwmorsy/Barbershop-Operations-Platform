@@ -31,10 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.AddNewManagerButton = new System.Windows.Forms.Button();
             this.ViewManagerButton = new System.Windows.Forms.Button();
-            this.HoursComboBox2 = new System.Windows.Forms.ComboBox();
-            this.HoursComboBox1 = new System.Windows.Forms.ComboBox();
             this.FIDBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.Label();
@@ -86,31 +83,23 @@
             this.ViewManagerButton.UseVisualStyleBackColor = true;
             this.ViewManagerButton.Click += new System.EventHandler(this.ViewManagerButton_Click);
             // 
-            // HoursComboBox2
-            // 
-            this.HoursComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoursComboBox2.FormattingEnabled = true;
-            this.HoursComboBox2.Location = new System.Drawing.Point(171, 719);
-            this.HoursComboBox2.Name = "HoursComboBox2";
-            this.HoursComboBox2.Size = new System.Drawing.Size(157, 33);
-            this.HoursComboBox2.TabIndex = 27;
-            // 
-            // HoursComboBox1
-            // 
-            this.HoursComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoursComboBox1.FormattingEnabled = true;
-            this.HoursComboBox1.Location = new System.Drawing.Point(171, 665);
-            this.HoursComboBox1.Name = "HoursComboBox1";
-            this.HoursComboBox1.Size = new System.Drawing.Size(157, 33);
-            this.HoursComboBox1.TabIndex = 26;
-            // 
             // FIDBox
             // 
             this.FIDBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FIDBox.Location = new System.Drawing.Point(507, 723);
+            this.FIDBox.Location = new System.Drawing.Point(171, 668);
             this.FIDBox.Name = "FIDBox";
-            this.FIDBox.Size = new System.Drawing.Size(179, 30);
+            this.FIDBox.Size = new System.Drawing.Size(158, 30);
             this.FIDBox.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(356, 668);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 25);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Re-Password";
             // 
             // label7
             // 
@@ -178,16 +167,6 @@
             this.PasswordBox.Size = new System.Drawing.Size(179, 30);
             this.PasswordBox.TabIndex = 16;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 665);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 25);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Sart Time";
-            // 
             // AddressBox
             // 
             this.AddressBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,12 +230,13 @@
             // FireBurberButton
             // 
             this.FireBurberButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FireBurberButton.Location = new System.Drawing.Point(345, 713);
+            this.FireBurberButton.Location = new System.Drawing.Point(9, 658);
             this.FireBurberButton.Name = "FireBurberButton";
-            this.FireBurberButton.Size = new System.Drawing.Size(127, 48);
+            this.FireBurberButton.Size = new System.Drawing.Size(139, 55);
             this.FireBurberButton.TabIndex = 9;
-            this.FireBurberButton.Text = "Fire Barber";
+            this.FireBurberButton.Text = "Fire Manager";
             this.FireBurberButton.UseVisualStyleBackColor = true;
+            this.FireBurberButton.Click += new System.EventHandler(this.FireBurberButton_Click);
             // 
             // label4
             // 
@@ -273,10 +253,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 787);
-            this.Controls.Add(this.HoursComboBox2);
-            this.Controls.Add(this.HoursComboBox1);
             this.Controls.Add(this.FIDBox);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Address);
@@ -309,10 +286,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button AddNewManagerButton;
         private System.Windows.Forms.Button ViewManagerButton;
-        private System.Windows.Forms.ComboBox HoursComboBox2;
-        private System.Windows.Forms.ComboBox HoursComboBox1;
         private System.Windows.Forms.TextBox FIDBox;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Address;

@@ -36,40 +36,25 @@ namespace Barbershop_Operations_Platform.User_Interface.ManagersTools
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(FNameBox.Text) || string.IsNullOrEmpty(LNameBox.Text) || string.IsNullOrEmpty(MID.ToString()) || string.IsNullOrEmpty(PhoneNumBox.Text) || string.IsNullOrEmpty(AddressBox.Text)
-                || string.IsNullOrEmpty(EmailBox.Text) || string.IsNullOrEmpty(Password.Text))
+                || string.IsNullOrEmpty(EmailBox.Text) || string.IsNullOrEmpty(Password.Text) || string.IsNullOrEmpty(RePassword.Text))
             {
                 MessageBox.Show("Can't Insert a Barber\nOne or More Fields is Empty");
             }
             else
             {
-                if (!(FNameBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                if (!FNameBox.Text.All(char.IsLetter))
                 {
-                    MessageBox.Show("Names must contain only letters.");
+                    MessageBox.Show("First Name is not valid");
                     return;
                 }
-                if (!(LNameBox.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
+                if (!LNameBox.Text.All(char.IsLetter))
                 {
-                    MessageBox.Show("Names must contain only letters.");
+                    MessageBox.Show("Last Name is not valid");
                     return;
                 }
-                if (!Regex.IsMatch(EmailBox.Text, @"^[a-zA-Z0-9_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                if (PasswordBox.Text.ToString() != RePassword.Text.ToString())
                 {
-                    MessageBox.Show("Enter Valid Email");
-                    return;
-                }
-                if (!(Password.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
-                {
-                    MessageBox.Show("Password can't be empty");
-                    return;
-                }
-                if (!(RePassword.Text.All(char.IsLetter) && LNameBox.Text.All(char.IsLetter)))
-                {
-                    MessageBox.Show("Password can't be empty");
-                    return;
-                }
-                if (Password.Text != RePassword.Text)
-                {
-                    MessageBox.Show("Password Doesn't Match");
+                    MessageBox.Show("Password Is not Matched");
                     return;
                 }
 

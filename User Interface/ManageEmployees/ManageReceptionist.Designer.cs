@@ -31,10 +31,7 @@
             this.ViewReceptionistsButton = new System.Windows.Forms.Button();
             this.AddNewReceptionistButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.HoursComboBox2 = new System.Windows.Forms.ComboBox();
-            this.HoursComboBox1 = new System.Windows.Forms.ComboBox();
             this.FIDBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.Label();
@@ -86,41 +83,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(673, 306);
             this.dataGridView1.TabIndex = 8;
             // 
-            // HoursComboBox2
-            // 
-            this.HoursComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoursComboBox2.FormattingEnabled = true;
-            this.HoursComboBox2.Location = new System.Drawing.Point(169, 715);
-            this.HoursComboBox2.Name = "HoursComboBox2";
-            this.HoursComboBox2.Size = new System.Drawing.Size(157, 33);
-            this.HoursComboBox2.TabIndex = 27;
-            // 
-            // HoursComboBox1
-            // 
-            this.HoursComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoursComboBox1.FormattingEnabled = true;
-            this.HoursComboBox1.Location = new System.Drawing.Point(169, 661);
-            this.HoursComboBox1.Name = "HoursComboBox1";
-            this.HoursComboBox1.Size = new System.Drawing.Size(157, 33);
-            this.HoursComboBox1.TabIndex = 26;
-            // 
             // FIDBox
             // 
             this.FIDBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FIDBox.Location = new System.Drawing.Point(500, 719);
+            this.FIDBox.Location = new System.Drawing.Point(152, 674);
             this.FIDBox.Name = "FIDBox";
-            this.FIDBox.Size = new System.Drawing.Size(186, 30);
+            this.FIDBox.Size = new System.Drawing.Size(175, 30);
             this.FIDBox.TabIndex = 25;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 715);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 25);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "End Time";
             // 
             // label8
             // 
@@ -251,12 +220,13 @@
             // FireBurberButton
             // 
             this.FireBurberButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FireBurberButton.Location = new System.Drawing.Point(343, 709);
+            this.FireBurberButton.Location = new System.Drawing.Point(8, 655);
             this.FireBurberButton.Name = "FireBurberButton";
-            this.FireBurberButton.Size = new System.Drawing.Size(127, 48);
+            this.FireBurberButton.Size = new System.Drawing.Size(138, 69);
             this.FireBurberButton.TabIndex = 9;
-            this.FireBurberButton.Text = "Fire Barber";
+            this.FireBurberButton.Text = "Fire Reciptiosinst";
             this.FireBurberButton.UseVisualStyleBackColor = true;
+            this.FireBurberButton.Click += new System.EventHandler(this.FireBurberButton_Click);
             // 
             // label4
             // 
@@ -273,10 +243,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 777);
-            this.Controls.Add(this.HoursComboBox2);
-            this.Controls.Add(this.HoursComboBox1);
             this.Controls.Add(this.FIDBox);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Address);
@@ -310,10 +277,7 @@
         private System.Windows.Forms.Button ViewReceptionistsButton;
         private System.Windows.Forms.Button AddNewReceptionistButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox HoursComboBox2;
-        private System.Windows.Forms.ComboBox HoursComboBox1;
         private System.Windows.Forms.TextBox FIDBox;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Address;

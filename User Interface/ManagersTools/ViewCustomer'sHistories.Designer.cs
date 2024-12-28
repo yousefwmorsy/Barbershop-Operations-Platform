@@ -39,7 +39,7 @@
             // ViewButton
             // 
             this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ViewButton.Location = new System.Drawing.Point(24, 418);
+            this.ViewButton.Location = new System.Drawing.Point(54, 412);
             this.ViewButton.Name = "ViewButton";
             this.ViewButton.Size = new System.Drawing.Size(816, 57);
             this.ViewButton.TabIndex = 6;
@@ -50,7 +50,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(20, 491);
+            this.dataGridView2.Location = new System.Drawing.Point(50, 485);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
@@ -61,7 +61,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(177, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(203, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 821);
+            this.ClientSize = new System.Drawing.Size(878, 821);
             this.Controls.Add(this.ViewButton);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
