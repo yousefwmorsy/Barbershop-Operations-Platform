@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -66,6 +66,18 @@
             this.splitContainer1.Size = new System.Drawing.Size(1465, 945);
             this.splitContainer1.SplitterDistance = 327;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkGray;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button5.Location = new System.Drawing.Point(12, 835);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(288, 66);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Logout";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -124,17 +136,6 @@
             this.button1.Text = "View Personal Info";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.DarkGray;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(12, 835);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(288, 66);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Logout";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // Receptionest
             // 

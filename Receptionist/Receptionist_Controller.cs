@@ -166,7 +166,7 @@ namespace Barbershop_Operations_Platform
             string query = $"INSERT INTO Appointment(CustomerID, ServiceID, BarberID, PaymentID, AppointmentTime) VALUES (12, {serviceid}, NULL, {paymentid}, '{apptime}')";
             int q1 = dbMan.ExecuteNonQuery(query);
             string query2 = $"INSERT INTO PhoneAppointment(EmpID, AppID, CustName) VALUES ({empid}, {GetScopeIdentity()}, '{name}')";
-            return q1+dbMan.ExecuteNonQuery(query2);
+            return q1*dbMan.ExecuteNonQuery(query2);
         }
 
         public int MarkDone(int appid)
@@ -178,6 +178,26 @@ namespace Barbershop_Operations_Platform
         public int Delete(int appid)
         {
             string query = $"DELETE FROM Appointment WHERE AppointmentID = {appid}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable GetOfflinePayments()
+        {
+            string query = $"SELECT \r\n    pay.payment_id as 'ID',\r\n\tCASE \r\n        WHEN a.CustomerID = 12 THEN pa.CustName\r\n        ELSE CONCAT(c.FName, ' ', c.LName)\r\n    END AS 'Customer',\r\n    s.service_name AS 'Service',\r\n    pay.amount AS 'Amount',\r\n    pay.Status AS 'Status'\r\nFROM \r\n    [dbo].[Appointment] AS a\r\nINNER JOIN \r\n    [dbo].[Payment_Transaction] AS pay ON a.PaymentID = pay.payment_id\r\nLEFT JOIN \r\n    [dbo].[Customer] AS c ON a.CustomerID = c.CustID\r\nLEFT JOIN \r\n    [dbo].[PhoneAppointment] AS pa ON a.AppointmentID = pa.AppID\r\nLEFT JOIN \r\n    [dbo].[Service] AS s ON a.ServiceID = s.service_id\r\nWHERE  \r\n    pay.type = 'Appointment' \r\n    AND pay.payment_method = 'Cash' AND pay.Status != 'Done'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int CustPaid(int empid, int paymentid)
+        {
+            string query = $"UPDATE payment_transaction SET Status = 'Done' WHERE payment_id = {paymentid}";
+            int q = dbMan.ExecuteNonQuery(query);
+            string query2 = $"INSERT INTO ReceptionistPayment(PaymentID, EmpID) VALUES({paymentid}, {empid})";
+            return q * dbMan.ExecuteNonQuery(query2);
+        }
+
+        public int UpdatePassword(int empid, string password)
+        {
+            string query = $"UPDATE Employee SET Password = {password} WHERE Emp_id = {empid}";
             return dbMan.ExecuteNonQuery(query);
         }
 

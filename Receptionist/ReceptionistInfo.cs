@@ -51,8 +51,9 @@ namespace Barbershop_Operations_Platform.Receptionist
             if (textBox4.Text.Length == 12 && textBox4.Text.All(char.IsDigit))
             {
                 //phone number updating
-                controllerObj.UpdatePhone(id, textBox4.Text);
-                MessageBox.Show("Phone number updated successfully");
+                if (controllerObj.UpdatePhone(id, textBox4.Text) != 0)
+                    MessageBox.Show("Phone number updated successfully");
+                else MessageBox.Show("Error!");
             }
             else
             {
@@ -62,8 +63,9 @@ namespace Barbershop_Operations_Platform.Receptionist
             if (textBox6.Text.Length != 0 && textBox6.Text.Contains("@"))
             {
                 //email updating
-                controllerObj.UpdateEmail(id, textBox6.Text);
-                MessageBox.Show("Email updated successfully");
+                if (controllerObj.UpdateEmail(id, textBox6.Text) != 0)
+                    MessageBox.Show("Email updated successfully");
+                else MessageBox.Show("Error!");
             }
             else
             {
@@ -73,8 +75,42 @@ namespace Barbershop_Operations_Platform.Receptionist
             if (textBox5.Text.Length != 0)
             {
                 //address updating
-                controllerObj.UpdateAddress(id, textBox5.Text);
-                MessageBox.Show("Address updated successfully");
+                if (controllerObj.UpdateAddress(id, textBox5.Text) != 0)
+                    MessageBox.Show("Address updated successfully");
+                else MessageBox.Show("Error!");
+            }
+            if (checkBox1.Checked)
+            {
+                if (textBox7.Text.Length < 8)
+                {
+                    MessageBox.Show("Password should be longer than 8 digits");
+                    return;
+                }
+                if (textBox8.Text != textBox7.Text)
+                {
+                    MessageBox.Show("Passwords do no match");
+                    return;
+                }
+                if (controllerObj.UpdatePassword(id, textBox7.Text) != 0)
+                    MessageBox.Show("Password updated successfully");
+                else MessageBox.Show("Error!");
+            }
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                label8.Visible = true;
+                label9.Visible = true;
+                textBox7.Visible = true;
+                textBox8.Visible = true;
+            }
+            else
+            {
+                label8.Visible = false;
+                label9.Visible = false;
+                textBox8.Visible = false;
+                textBox7.Visible = false;
             }
         }
     }
