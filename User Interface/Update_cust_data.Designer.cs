@@ -48,21 +48,21 @@
             // 
             // first_name
             // 
-            this.first_name.Location = new System.Drawing.Point(166, 44);
+            this.first_name.Location = new System.Drawing.Point(199, 48);
             this.first_name.Name = "first_name";
             this.first_name.Size = new System.Drawing.Size(171, 26);
             this.first_name.TabIndex = 0;
             // 
             // Lname
             // 
-            this.Lname.Location = new System.Drawing.Point(713, 44);
+            this.Lname.Location = new System.Drawing.Point(607, 66);
             this.Lname.Name = "Lname";
             this.Lname.Size = new System.Drawing.Size(171, 26);
             this.Lname.TabIndex = 1;
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(166, 97);
+            this.email.Location = new System.Drawing.Point(199, 163);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(171, 26);
             this.email.TabIndex = 2;
@@ -70,14 +70,14 @@
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(713, 94);
+            this.password.Location = new System.Drawing.Point(607, 125);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(171, 26);
             this.password.TabIndex = 3;
             // 
             // haicutdetails
             // 
-            this.haicutdetails.Location = new System.Drawing.Point(187, 156);
+            this.haicutdetails.Location = new System.Drawing.Point(199, 238);
             this.haicutdetails.Multiline = true;
             this.haicutdetails.Name = "haicutdetails";
             this.haicutdetails.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -87,7 +87,7 @@
             // 
             // phone_number
             // 
-            this.phone_number.Location = new System.Drawing.Point(713, 150);
+            this.phone_number.Location = new System.Drawing.Point(199, 104);
             this.phone_number.Name = "phone_number";
             this.phone_number.Size = new System.Drawing.Size(171, 26);
             this.phone_number.TabIndex = 7;
@@ -95,7 +95,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(23, 48);
+            this.name.Location = new System.Drawing.Point(80, 54);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(79, 20);
             this.name.TabIndex = 8;
@@ -105,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(576, 48);
+            this.label2.Location = new System.Drawing.Point(470, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 9;
@@ -114,7 +114,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 100);
+            this.label3.Location = new System.Drawing.Point(80, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 10;
@@ -124,7 +124,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(576, 100);
+            this.label4.Location = new System.Drawing.Point(470, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 11;
@@ -133,7 +133,7 @@
             // phone
             // 
             this.phone.AutoSize = true;
-            this.phone.Location = new System.Drawing.Point(570, 156);
+            this.phone.Location = new System.Drawing.Point(56, 110);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(117, 20);
             this.phone.TabIndex = 12;
@@ -142,7 +142,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 159);
+            this.label6.Location = new System.Drawing.Point(44, 268);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 20);
             this.label6.TabIndex = 13;
@@ -151,7 +151,7 @@
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(23, 357);
+            this.date.Location = new System.Drawing.Point(23, 454);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(77, 20);
             this.date.TabIndex = 14;
@@ -160,7 +160,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(634, 424);
+            this.checkBox1.Location = new System.Drawing.Point(594, 502);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 24);
             this.checkBox1.TabIndex = 15;
@@ -169,7 +169,7 @@
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(634, 370);
+            this.update.Location = new System.Drawing.Point(594, 448);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(209, 32);
             this.update.TabIndex = 16;
@@ -179,7 +179,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(166, 351);
+            this.dateTimePicker1.Location = new System.Drawing.Point(166, 448);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(276, 26);
             this.dateTimePicker1.TabIndex = 17;
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 494);
+            this.ClientSize = new System.Drawing.Size(966, 586);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.update);
             this.Controls.Add(this.checkBox1);
@@ -205,6 +205,7 @@
             this.Controls.Add(this.email);
             this.Controls.Add(this.Lname);
             this.Controls.Add(this.first_name);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Update_cust_data";
             this.Text = "Update_cust_data";
             this.ResumeLayout(false);
