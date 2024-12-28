@@ -10,8 +10,9 @@ namespace Barbershop_Operations_Platform
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"Data Source=barbershopdb.database.windows.net;Initial Catalog=""Barbershop Operations Platform DB"";User ID=barber;Password=7ala2@password;Encrypt=true";
+        static string DB_Connection_String = @"Server=tcp:barbershopdb.database.windows.net,1433;Initial Catalog=Barbershop Operations Platform DB;Persist Security Info=False;User ID=barber;Password=7ala2@password;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         SqlConnection myConnection;
+
         public string GetConnectionString()
         {
             return DB_Connection_String;
