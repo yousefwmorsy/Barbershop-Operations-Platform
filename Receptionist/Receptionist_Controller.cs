@@ -169,6 +169,17 @@ namespace Barbershop_Operations_Platform
             return q1*dbMan.ExecuteNonQuery(query2);
         }
 
+        public int getPrice(int payid)
+        {
+            string query = $"SELECT Amount from Payment_Transaction Where Payment_id = {payid}";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int getCust(int payid)
+        {
+            string query = $"SELECT CustomerID from Appointment WHERE PaymentID = {payid}";
+            return (int)dbMan.ExecuteScalar(query);
+        }
         public int MarkDone(int appid)
         {
             string query = $"UPDATE Appointment SET Status = 'Done' WHERE AppointmentID = {appid}";
@@ -192,7 +203,11 @@ namespace Barbershop_Operations_Platform
             string query = $"UPDATE payment_transaction SET Status = 'Done' WHERE payment_id = {paymentid}";
             int q = dbMan.ExecuteNonQuery(query);
             string query2 = $"INSERT INTO ReceptionistPayment(PaymentID, EmpID) VALUES({paymentid}, {empid})";
-            return q * dbMan.ExecuteNonQuery(query2);
+            int q2 = dbMan.ExecuteNonQuery(query2);
+            int price = getPrice(paymentid);
+            int custid = getCust(paymentid);
+            string query3 = $"UPDATE Customer SET Points+={price} WHERE CustID = {custid}";
+            return q * q2 * dbMan.ExecuteNonQuery(query3);
         }
 
         public int UpdatePassword(int empid, string password)
