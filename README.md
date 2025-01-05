@@ -18,34 +18,34 @@ enables personalized service, contributing to a modernised and customer-centric 
 
 ## System Users and Priveleges
 ### Customer
-• Creates an account
-• Views points, appointment history, and account details (attributes: fav barber, haircut details, etc).
-• Reserves an appointment and gives feedback regarding it
-• Pays for appointment (online payment, offline payment at branch, using points)
-• Updates account details and preferences
+* Creates an account
+* Views points, appointment history, and account details (attributes: fav barber, haircut details, etc).
+* Reserves an appointment and gives feedback regarding it
+* Pays for appointment (online payment, offline payment at branch, using points)
+* Updates account details and preferences
 
 ### Barber
-• Views appointments schedule
-• Requests days off
-• Requests supplies
-• Logs his attendance
-• Submits incident reports
-• Views and manages personal information.
+* Views appointments schedule
+* Requests days off
+* Requests supplies
+* Logs his attendance
+* Submits incident reports
+* Views and manages personal information.
 
 ### Receptionist
-• Manages appointments (assign barbers)
-• Adds appointments made via phone or in store
-• Supervises payment transactions
-• Requests days off
-• Views and manages personal information
+* Manages appointments (assign barbers)
+* Adds appointments made via phone or in store
+* Supervises payment transactions
+* Requests days off
+* Views and manages personal information
 
 ### Manager
-• Views and manages personal information
-• Adds or removes Barbers and Receptionists
-• Views barbers' and customers' histories
-• Approves days off
-• Approves supply request
-• Views financial statistics
-• Creates offers
-• Receives service feedback and incident reports
-• SuperManager can add and update Managers
+* Views and manages personal information
+* Adds or removes Barbers and Receptionists
+* Views barbers' and customers' histories
+* Approves days off
+* Approves supply request
+* Views financial statistics
+* Creates offers
+* Receives service feedback and incident reports
+* SuperManager can add and update Managers
