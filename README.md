@@ -49,3 +49,5 @@ enables personalized service, contributing to a modernised and customer-centric 
 * Creates offers
 * Receives service feedback and incident reports
 * SuperManager can add and update Managers
+
+This project was done as a part of the coursework for CMPS202 - Introduction to Database Management Systems at the Faculty of Engineering - Cairo University.
